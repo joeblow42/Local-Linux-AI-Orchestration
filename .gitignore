@@ -1,0 +1,36 @@
+# Credentials, machine-local configuration, and runtime state
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+secrets/
+credentials/
+config/local/
+data/
+runtime/
+conversations/
+checkpoints/
+logs/
+# Third-party dependency binaries and caches
+dependencies/archives/
+dependencies/wheelhouse/
+dependencies/debs/
+*.whl
+*.deb
+*.zip
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+dist/
+build/
+*.egg-info/
+# Editor/OS
+.DS_Store
+.idea/
+.vscode/
+*.swp
