@@ -57,3 +57,7 @@ Start with [updated engineering lead](./ENGINEERING_HANDOFF.md#10-engineering-co
 - [Consolidated 28 current exact rewrite candidates](./RP02_28_CONSOLIDATED_EXACT_WORDING_CANDIDATE_20261116.csv): 21 prior sustained, five refined, two additional questioned-only; **not G-R accepted**. [Machine-readable checkpoint](./RP02_136_APPROVED_SCOPE_SOURCE_REVIEW_CHECKPOINT_20261116.json).
 
 **Next:** controlled acceptance-criterion preparation and version-specific static review of IF-02; no runtime test, software change, external API billing, PR merge, or G-R/G-A approval. The earlier [owner decision docket](./RP02_RP03_OWNER_DECISION_DOCKET_CANDIDATE_20261116.md) remains the original candidate choice record, **superseded as to decision status** by the approved owner decision record linked above.
+
+## Next-conversation handoff — current entrypoint
+
+**[START NEXT CONVERSATION HERE: NEXT_CONVERSATION_HANDOFF_20261116.md](./NEXT_CONVERSATION_HANDOFF_20261116.md)** — verifies owner-approved A/A/A directions, 136-source screening, 28 candidate rewrites, RP-03 IF-02 provisional interface, G-R/G-A/G1 holds, original-source ZIP limitations and exact next engineering activities. The handoff was created after the 2026-11-16 checkpoint. Read at the **current PR HEAD**, not only the predecessor commit recorded inside the handoff.
