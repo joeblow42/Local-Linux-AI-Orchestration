@@ -1,0 +1,55 @@
+{
+  "exception_id": "LAI-SRC-EXC-REV016-001",
+  "record_date": "2026-11-16",
+  "status": "CLOSED_DOCUMENTED_SOURCE_LOSS_RISK_ACCEPTED",
+  "blocking_current_engineering": false,
+  "original_file": "04_Rev0_16_Source_Identity_and_Authority.json",
+  "expected_sha256": "a9a2ce478cc5cc0647e20418787f948ac8faaaf7fd491cb6e880d10d9a1eebaa",
+  "recovered": false,
+  "supporting_archive": "LocalAI_Independent_Review_PhaseII_Source_Comparison_20261114(1).zip",
+  "nested_manifest": {
+    "verified_matches": 7,
+    "missing_original_files": 1,
+    "hash_mismatches": 0
+  },
+  "outer_manifest": {
+    "verified_matches": 54,
+    "missing": 0,
+    "hash_mismatches": 0
+  },
+  "accessible_final_search": {
+    "disk_zip_files": 3,
+    "nested_unique_zip_instances": 15,
+    "non_directory_members_examined": 247,
+    "json_members_hashed": 32,
+    "matched_name_count": 0,
+    "matched_expected_sha256_count": 0,
+    "errors": 0
+  },
+  "owner_laptop_search": "OWNER_REPORTED_NO_MATCH",
+  "additional_historical_library_archive": {
+    "name": "Local_AI_GR_GA_Comprehensive_Recovery_Through_Rev0_17_2026-11-09.zip",
+    "bytes": 5702383,
+    "search_disposition": "NOT_BYTE_INSPECTED_RAW_MATERIALIZATION_UNAVAILABLE"
+  },
+  "residual_risk": {
+    "historical_original_authority_completeness": "MODERATE_LOCALIZED",
+    "current_R1_engineering_incremental_risk": "LOW",
+    "runtime_fat_direct_impact": "NONE_DEMONSTRATED"
+  },
+  "sources_of_overlap": [
+    "Surviving Rev0.16 seven SHA-matched files",
+    "EX01 ORIGINAL_AUTHORITY_REGISTER_CROSSWALK.csv",
+    "Revalidated original 136 requirement statements and 26 oracle identities",
+    "Subsequent owner-approved release and architecture decisions"
+  ],
+  "reopen_conditions": [
+    "original exact file recovered",
+    "contradictory controlling source evidence",
+    "source-specific adjudication depends on absent unique assertion",
+    "owner explicit request"
+  ],
+  "future_reporting": "REFERENCE_CLOSED_EXCEPTION_ONLY_IF_SPECIFIC_SOURCE_PROVENANCE_MATTERS",
+  "no_authority_promotion": true,
+  "g1_hold_remains_active": true
+}
