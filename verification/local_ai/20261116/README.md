@@ -38,3 +38,13 @@ Start with [updated engineering lead](./ENGINEERING_HANDOFF.md#10-engineering-co
 ## Closed historical-source exception
 
 - [Rev0.16 exception disposition (controlled engineering record)](./REV016_SOURCE_EXCEPTION_CLOSED_20261116.md) and [machine-readable state](./REV016_SOURCE_EXCEPTION_CLOSED_20261116.json). Status: **CLOSED / MISSING ORIGINAL / RESIDUAL RISK ACCEPTED / NONBLOCKING**. Reference it only for source-sensitive provenance decisions; no repeated blocker notice in routine RP progress. An older Rev0.17 Library ZIP exists but could not be inspected with available file access; this limitation is recorded explicitly. No G-R/G-A authorization or release of the G1 hold follows from exception closure.
+
+## Latest source-first quality and interface checkpoint (2026-11-16)
+
+- [RP-02 independent second pass — 28 rewrite candidates](./RP02_28_SECOND_PASS_QUALITY_DISPOSITIONS_CANDIDATE_20261116.md): 21 sustained candidates, five refinements, two return to original.
+- [RP-02 12 quality-FAIL non-reword dispositions](./RP02_12_QUALITY_FAIL_NONREWORD_DISPOSITIONS_CANDIDATE_20261116.md): 40/40 reported FAILs now addressed at candidate-review level; no G-R approval.
+- [RP-02 challenged QUESTIONED-only requirements](./RP02_TARGETED_QUESTIONED_ONLY_SCOPE_CHALLENGES_20261116.md): no wholesale PASS inferred for the other 96; qualified resource and token-usage issues need source-based correction.
+- [RP-03 minimal R1 direct/delegated task contract](./RP03_R1_MINIMUM_INTERFACE_AND_TASK_LIFECYCLE_CANDIDATE_20261116.md): statuses, task/cancel/recovery boundaries and gateway error/control ownership, not frozen.
+- [Owner decision docket — three bounded decisions](./RP02_RP03_OWNER_DECISION_DOCKET_CANDIDATE_20261116.md) and [machine-readable checkpoint](./RP02_RP03_SECOND_PASS_VERIFICATION_CHECKPOINT_20261116.json).
+
+**Authoritative next action:** obtain owner selections for release allocation, removal of unjustified R1 modules, and provisional IF-02 adapter. Neither the exact original source text nor full historical binary ZIP has been uploaded to this public branch. All proposals are NOT APPROVED; G1 hold remains active; the GitHub PR stays draft/unmerged.
