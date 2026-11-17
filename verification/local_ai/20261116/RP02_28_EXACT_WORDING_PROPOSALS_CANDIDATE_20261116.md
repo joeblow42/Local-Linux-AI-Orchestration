@@ -8,7 +8,7 @@
 | --- | --- |
 | LAI-R1-N001-01 | The application shall install and operate on a supported Bodhi Linux 7 AMD64 system without replacing the installed host operating system. |
 | LAI-R1-N005-01 | For a user-initiated delegated workflow, the supervisor shall invoke at least two configured local specialist roles under the same task identifier. |
-| LAI-R1-N005-03 | The supervisor shall return one consolidated response that identifies which specialist contributions were used and which required contributions failed or were unavailable. |
+| LAI-R1-N005-03 | The supervisor shall produce a consolidated result using the successful specialist responses associated with an accepted delegated task. |
 | LAI-R1-N006-03 | The supervisor shall mark the result of each failed specialist invocation as failed or unavailable and shall not present its output as a successful contribution. |
 | LAI-R1-N008-02 | After a supported supervisor restart, the supervisor shall retrieve the last durably checkpointed task state and report a recoverable, completed, failed, or recovery-error disposition consistent with that state. |
 | LAI-R1-N009-02 | For an explicitly authorized external inference request, the outbound-context controller shall transmit only fields in the authorized projection for that one request and selected provider/model. **(Proposed R2.)** |
@@ -16,7 +16,7 @@
 | LAI-R1-N010-01 | Retained operational request logs shall omit raw prompts, responses, secret values, and message content. |
 | LAI-R1-N010-02 | The Release 1 application shall not transmit application telemetry to an external collection service. |
 | LAI-R1-N010-03 | The application shall remove sanitized operational request and diagnostic metadata older than the approved 30-day retention interval, without treating conversation history and backups as operational metadata. |
-| LAI-R1-N010-06 | The diagnostic export function shall exclude message content and secret values from exports not explicitly authorized to contain those fields. |
+| LAI-R1-N010-06 | The diagnostic export function shall exclude raw prompts, responses, and secret values from sanitized Release 1 diagnostic exports. |
 | LAI-R1-N011-04 | The local gateway management API shall deny unauthenticated and unauthorized requests to read or modify protected configuration. |
 | LAI-R1-N011-05 | Sanitized diagnostic records and exports shall not contain local virtual keys, passwords, or other credential secret values. |
 | LAI-R1-N012-04 | For a Release 1 local-inference request, the gateway shall deny unauthorized model/provider routing rather than dispatch to an unrequested backend or any hosted provider. |
@@ -46,3 +46,9 @@
 7. **Unchanged reviewed statements:** 108/136 exact originals were not given new words. Absence of rewriting is **not** a claim their acceptance criteria or implementation are validated. Each remains in the 136-ID disposition index.
 
 **Outstanding:** independent wording-level second review, G-R authority, interface schema freeze G-A, source identity exception for missing Rev0.16 JSON, and actual first-article execution. Do not let any candidate wording silently supersede the preserved original.
+
+## Focused candidate wording QA (same increment)
+
+- **N005-03:** narrowed the proposed requirement to one obligation: synthesizing successful contributions. Missing/failed specialist coverage is separately covered by `LAI-R1-N006-02` and the distinct operational failure oracle; do not duplicate those outcomes here.
+- **N010-06:** removed a loophole implying message-content diagnostic exports could be allowed by a general exception. For R1 **sanitized diagnostics**, prompts, responses and secrets are suppressed; the owner did not approve raw diagnostic export.
+- These are refinements to unapproved candidate wording only; no original source text, owner decision or baseline has been changed.
