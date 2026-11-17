@@ -1,0 +1,100 @@
+{
+  "record_type": "IF02_PINNED_SOURCE_BRANCH_AND_FAKE_SUPERVISOR_EVIDENCE",
+  "record_date": "2026-11-17",
+  "incremental_scope": "source read, static source guards, executable in-memory candidate fake only",
+  "starting_head": "1dd0e82ce40609e6281e020fdd02ad195ced7773",
+  "owner_direction": "LAI-OD-20261117-04",
+  "source_repository": "open-webui/open-webui",
+  "source_commit": "f7ac7ee10962ddec0017f5c29b6740d9b9c5faca",
+  "source_blobs": {
+    "src/lib/components/chat/Chat.svelte": "438c173eb91833192d822d15d6ecaa76f3b99e15",
+    "src/lib/components/chat/MessageInput.svelte": "bafec0644a19cb993e52227e266fa1747ddb08c8",
+    "src/lib/components/chat/MessageInput/Commands/SlashCommands.svelte": "92b6d92aef8dbae70e33b145b1d8b3bdf74d9b26",
+    "backend/open_webui/main.py": "a1abf80e7980c25cfc1d7dbf2dd76c290fd7de7d",
+    "backend/open_webui/functions.py": "20601fee7e42e69f7d21bb452c740ec4c3df96f9",
+    "backend/open_webui/utils/chat.py": "c97985dde4ac281d7e87c11eb5c178d81d1b43b4"
+  },
+  "source_guards": {
+    "method": "presence of source-anchored code snippets within exact pinned blobs, not integration execution",
+    "checks": 15,
+    "matches": 15,
+    "unmatched": 0
+  },
+  "source_findings": [
+    {
+      "id": "S01",
+      "anchor": "Chat.svelte 3896-3915",
+      "observation": "builtin /status and selected other special slash commands intercepted client-side"
+    },
+    {
+      "id": "S02",
+      "anchor": "Chat.svelte 4001-4028",
+      "observation": "if generating and queue enabled, new user prompt is queued; if queue disabled WebUI stopResponse executes before proceeding"
+    },
+    {
+      "id": "S03",
+      "anchor": "Chat.svelte 4674-4706, 4420-4485",
+      "observation": "new user turn content submitted via selectable model; UI includes client-originating user_message metadata"
+    },
+    {
+      "id": "S04",
+      "anchor": "Chat.svelte 4621-4672",
+      "observation": "UI Stop calls Open WebUI stopTasksByChatId/stopTask and aborts response; no independent supervisor cancellation proven"
+    },
+    {
+      "id": "S05",
+      "anchor": "main.py 1148-1152, 1316-1348, 1544-1605",
+      "observation": "chat completion authenticates user on server; client-originating user message and regeneration context are stored separately"
+    },
+    {
+      "id": "S06",
+      "anchor": "functions.py 196-214, 248-261, 280-337 and utils/chat.py 280-282",
+      "observation": "backend selects Pipe, injects server-validated __user__ by optional signature and invokes pipe; only supported if model is selected and Pipe signature accepts needed fields"
+    },
+    {
+      "id": "S07",
+      "anchor": "Chat.svelte 4170-4209",
+      "observation": "UI completion task_ids refer to Open WebUI task machinery; no basis to conflate with independent supervisor task IDs"
+    }
+  ],
+  "design_result": {
+    "status": "CANDIDATE_FAKE_MODEL_PASS",
+    "first_run": "16 PASS / 1 FAIL; T17 caught accidental repeated terminal finalization in fake test model; corrected before final run",
+    "corrected_run": "20 PASS / 0 FAIL",
+    "method": "exact committed JS file fetched at author commit and executed in isolated V8 with mocked console/process; NOT Node/GitHub CI/installed system",
+    "committed_code": "verification/local_ai/20261116/verify_if02_in_memory_supervisor_candidate.js",
+    "author_commit": "81a957d963224e594f3580cc70946431a4f80012",
+    "code_blob_sha": "b85626ab980b58132305da27e377ca1de1fe4442",
+    "test_ids": "T01 through T20",
+    "test_categories": [
+      "same-request retry and changed-payload conflict",
+      "cancel acceptance versus terminal",
+      "cancel-before/after completion and no-new-step fence",
+      "terminal immutability",
+      "operator access",
+      "supervisor unavailable and checkpoint loss",
+      "UI Stop not task cancel",
+      "stale status event"
+    ]
+  },
+  "limitations": {
+    "frontend_rendered_test": "NOT_RUN",
+    "actual_pipe_invocation": "NOT_RUN",
+    "langgraph_service_or_saver": "NOT_RUN",
+    "real_http_or_oci_compatibility": "NOT_RUN",
+    "live_cancel_race": "NOT_RUN",
+    "G1_runtime": "OWNER_HOLD",
+    "original_26_oracles": "ALL_NOT_RUN",
+    "G_R": "NOT_APPROVED",
+    "G_A": "NOT_APPROVED",
+    "github_pr": "MUST_REMAIN_DRAFT_UNMERGED",
+    "paid_API_calls": "NONE"
+  },
+  "unresolved_gates": [
+    "command delivery through pinned built UI and selected single Pipe is not exercised",
+    "fast durable task acknowledgement and UI queue interaction not runtime-proven",
+    "server-authenticated actor and stored user-turn provenance must be validated in actual selected Pipe/HTTP contract",
+    "commit-ordered cancellation and restart/checkpoint behavior not real backend tested",
+    "task ID must be distinguished from Open WebUI generation task IDs"
+  ]
+}
