@@ -109,3 +109,20 @@ This section updates **current engineering status only**; it does not supersede 
 **Next permissible technical increment:** offline requirements/trace QA, static producer-consumer/API contract refinement, review-ready G-R/G-A decision docket, and version/source reconciliation that does not inspect live G1. Keep this PR draft/unmerged; never silently promote these candidate records.
 
 **Exception reporting:** The closed Rev0.16 original-source-loss record should not recur in routine blocker reports. Consult the controlled exception only when its missing historical authority assertions are relevant. The general G-R/G-A and G1 hold boundaries remain unchanged.
+
+## 11. Latest continuation checkpoint — RP-02 quality and RP-03 interface control (2026-11-16)
+
+**Current engineering status only; candidate not approved.** Subsequent to the [closed historical source exception](./REV016_SOURCE_EXCEPTION_CLOSED_20261116.md), engineering resumed using original exact 136 statements and 19 interfaces from the recovered ZIP. The **original 136 statement hashes, need links and source IDs all independently verified 136/136**.
+
+- [RP-02 28-row independent second pass](./RP02_28_SECOND_PASS_QUALITY_DISPOSITIONS_CANDIDATE_20261116.md): of 28 previous candidate replacement texts, **21 sustained as candidates, five require refinement, two should retain original text**. The complete source-sensitive local review remains outside this public repo.
+- [RP-02 other 12 reported FAILs](./RP02_12_QUALITY_FAIL_NONREWORD_DISPOSITIONS_CANDIDATE_20261116.md): controlled dispositions for duplicates, R2/R3 deferrals, evidence classification, licensed-edition detection and packaging rights. Together these cover all **40 reported quality FAILs**, not owner acceptance of all 136.
+- [Targeted QUESTIONED-only challenges](./RP02_TARGETED_QUESTIONED_ONLY_SCOPE_CHALLENGES_20261116.md): **96 QUESTIONED-only does not imply PASS**. Resource monitoring/planning can likely be handled through FAT and installer/preflight, not additional runtime systems; `LAI-R1-N024-02` requires honest UNKNOWN counts when upstream omits token usage. Further 96-row review remains.
+- [RP-03 minimum interface/task lifecycle](./RP03_R1_MINIMUM_INTERFACE_AND_TASK_LIFECYCLE_CANDIDATE_20261116.md): bounded IF-01/02/03/06 contract, task identity, durable status/cancel/restart invariants and 10 negative/recovery design challenges; the thin Open WebUI Pipe → independent local LangGraph service is a **provisional** design recommendation, **not** G-A selection or source-version certification.
+- [Owner decision docket](./RP02_RP03_OWNER_DECISION_DOCKET_CANDIDATE_20261116.md): three specific owner choices concerning original release assignments, nonessential module obligations, and the provisional IF-02 entry. No choices have been approved by the act of drafting this docket.
+- [Machine-readable second-pass checkpoint](./RP02_RP03_SECOND_PASS_VERIFICATION_CHECKPOINT_20261116.json) gives exact counts, identified source hashes, preserved statuses and next authority requirements.
+
+**Approved product direction unchanged:** R1 local-only Open WebUI/Bifrost OSS/Ollama with independent LangGraph and .deb/offline closure/verified restoration; R2 operational authorized OpenAI/Anthropic; R3 autonomous; AC-01–04 design seams and FAT Alternative B. No R2 hosted mocks/adapters or R3 scheduler introduced in R1.
+
+**Hard gates unchanged:** G-R and G-A are blocked pending genuine owner decisions and independently warranted acceptance/interface semantics. Exact Open WebUI/LangGraph runtime pins not established. G1 runtime verification still on OWNER HOLD. The 26 original oracles are NOT RUN. No deployed-service change, paid API call, baseline promotion, source rewrite or PR merge was performed.
+
+**Next authorized task:** obtain owner disposition of the three bounded decisions, then complete residual 96 QUESTIONED-only screening, reconcile final exact 136-row wording/applicability/verification for G-R; conduct version-pinned interface/source review before G-A. Keep this candidate PR draft and unmerged.
