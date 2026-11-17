@@ -20,3 +20,6 @@
 - **[26 oracle scope and execution-state index](./RP04_26_ORACLE_SCOPE_INDEX_CANDIDATE_20261116.csv)** — all NOT RUN; not owner accepted.
 
 Original recovery ZIP bytes were made available in the **current source-inspection conversation**, and the original ZIP identity and 13/13 outer manifest were verified. The original ZIP and nested archives are **still not published in this public repository**. The isolated missing Rev0.16 source-identity JSON is still missing. Do not describe this branch as complete original-source storage or as approval of any candidate baselines; G1 hold remains active.
+
+- **[Seven derived R1 gaps and 26 candidate falsifiable oracles](./RP02_RP04_DERIVED_REQUIREMENTS_AND_ORACLES_CANDIDATE_20261116.md)** — 19 R1 cases (one conditional), six R2 cases, one R3; all NOT RUN.
+- **[Detailed source-first dispositions for all 19 interfaces](./RP03_19_SOURCE_FIRST_BOUNDARY_DISPOSITIONS_CANDIDATE_20261116.md)** — accountable producer/consumer boundaries and outstanding pinned-wire evidence; G-A not approved.
