@@ -48,3 +48,12 @@ Start with [updated engineering lead](./ENGINEERING_HANDOFF.md#10-engineering-co
 - [Owner decision docket — three bounded decisions](./RP02_RP03_OWNER_DECISION_DOCKET_CANDIDATE_20261116.md) and [machine-readable checkpoint](./RP02_RP03_SECOND_PASS_VERIFICATION_CHECKPOINT_20261116.json).
 
 **Authoritative next action:** obtain owner selections for release allocation, removal of unjustified R1 modules, and provisional IF-02 adapter. Neither the exact original source text nor full historical binary ZIP has been uploaded to this public branch. All proposals are NOT APPROVED; G1 hold remains active; the GitHub PR stays draft/unmerged.
+
+## Current owner-approved scope and complete RP-02 candidate review (2026-11-16)
+
+- [Owner-approved A/A/A directions](./OWNER_DECISIONS_RP02_RP03_APPROVED_20261116.md): original 136 release assignments **104 R1 / 17 R2 / 15 R3**; reuse existing components and FAT instruments rather than unjustified runtime subsystems; provisional thin Open WebUI Pipe → separate local LangGraph supervisor.
+- [Owner-approved 136-line release assignment register](./OWNER_APPROVED_136_RELEASE_ASSIGNMENTS_20261116.csv) — **release only**, not G-R statement or acceptance approval.
+- [Full 136-item source-first candidate reconciliation](./RP02_136_SOURCE_FIRST_RECONCILIATION_AFTER_OWNER_APPROVAL_20261116.md) and [96 QUESTIONED-only source-linked screen](./RP02_96_QUESTIONED_ONLY_SOURCE_FIRST_SCREEN_CANDIDATE_20261116.csv).
+- [Consolidated 28 current exact rewrite candidates](./RP02_28_CONSOLIDATED_EXACT_WORDING_CANDIDATE_20261116.csv): 21 prior sustained, five refined, two additional questioned-only; **not G-R accepted**. [Machine-readable checkpoint](./RP02_136_APPROVED_SCOPE_SOURCE_REVIEW_CHECKPOINT_20261116.json).
+
+**Next:** controlled acceptance-criterion preparation and version-specific static review of IF-02; no runtime test, software change, external API billing, PR merge, or G-R/G-A approval. The earlier [owner decision docket](./RP02_RP03_OWNER_DECISION_DOCKET_CANDIDATE_20261116.md) remains the original candidate choice record, **superseded as to decision status** by the approved owner decision record linked above.
