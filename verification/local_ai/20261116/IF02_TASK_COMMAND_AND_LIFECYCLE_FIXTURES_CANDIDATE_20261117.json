@@ -20,7 +20,7 @@
     }
   },
   "command_grammar_candidate": "^(task) (status|cancel) ([A-Za-z0-9_-]{1,128})$",
-  "parser_notes": "Recognize only entire single authenticated user message; ASCII, case-sensitive, no extra whitespace; reserve malformed prefixes as syntax errors. Non-slash task prefix deliberately avoids unverified Open WebUI slash-command suggestion handling. Slash forms are rejected at Pipe if received, pending UI source/fixture proof.",
+  "parser_notes": "Recognize only entire authenticated user message; ASCII, case-sensitive, no extra whitespace. Reserve any case-insensitive 'task ' or '/task ' prefix not matching the canonical grammar as syntax error, rather than accidental new delegated task creation. Non-slash prefix avoids unverified Open WebUI suggestion handling. Slash forms rejected by Pipe if received; UI delivery still requires fixture verification.",
   "lifecycle_states_candidate": [
     "accepted",
     "running",
@@ -290,7 +290,7 @@
       "id": "C20",
       "message_origin": "user",
       "input_text": "TASK CANCEL tsk_alpha_001",
-      "expected_intent": "submit",
+      "expected_intent": "syntax_error",
       "expected_task_id": null,
       "source_anchors": [
         "IF-02",
@@ -303,7 +303,7 @@
       "id": "C21",
       "message_origin": "user",
       "input_text": "task list",
-      "expected_intent": "submit",
+      "expected_intent": "syntax_error",
       "expected_task_id": null,
       "source_anchors": [
         "IF-02",
