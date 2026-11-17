@@ -73,3 +73,12 @@ Start with [updated engineering lead](./ENGINEERING_HANDOFF.md#10-engineering-co
 **[Current IF-02 owner-A verification checkpoint](./IF02_OWNER_A_SOURCE_FIXTURE_VERIFICATION_CHECKPOINT_20261117.md)** — records the owner's approved single-Pipe text-command interaction direction, source-pinned Open WebUI 0.12.5 frontend slash-suggestion caveat, a proposed **non-slash** `task status <id>`/`task cancel <id>` grammar, and minimum separate-supervisor HTTP task-control contract. Includes [candidate protocol](./RP03_IF02_TASK_COMMAND_HTTP_MINIMUM_CONTRACT_CANDIDATE_20261117.md), [23 command + 11 lifecycle + 14 fault scenario fixtures](./IF02_TASK_COMMAND_AND_LIFECYCLE_FIXTURES_CANDIDATE_20261117.json), and [stdlib-only fixture checker](./verify_if02_candidate_fixtures.py).
 
 **Exact limited result:** Independent in-memory candidate-oracle consistency PASS for 23 command and 11 lifecycle expectations; 14 fault scenario *definitions* reviewed. The Python runner and product code were not executed. **G-R/G-A NOT APPROVED, G1 OWNER HOLD, original oracles/FAT NOT RUN, PR DRAFT/UNMERGED**. Do not treat static checks as installed-system evidence. The original recovery ZIP is still not in public GitHub; the Rev0.16 exception remains closed/nonblocking.
+
+## 2026-11-17 — IF-02 pinned frontend dispatch and isolated supervisor test
+
+**[Current IF-02 source/isolated-test continuation checkpoint](./RP03_IF02_FRONTEND_DELIVERY_AND_FAKE_SUPERVISOR_CHECKPOINT_20261117.md).**
+
+- [Machine-readable source and test evidence](./IF02_PINNED_SOURCE_AND_ISOLATED_MODEL_EVIDENCE_20261117.json), exact pinned Open WebUI 0.12.5 source blobs and 15/15 static guards.
+- [Reproducible standalone JavaScript in-memory mock tests](./verify_if02_in_memory_supervisor_candidate.js), 20/20 PASS when exact committed program was executed in isolated V8. These are candidate model tests, **not installed FAT**.
+- Material finding: an active chat response can queue status/cancel messages or trigger Open WebUI Stop, so supervisor task submission should give a prompt **durable task-ID acknowledgement** before longer work proceeds separately. This design refinement remains **G-A candidate**, not owner-approved wire schema.
+- Original 26 controlled oracles NOT RUN; G-R/G-A not approved; G1 hold active; PR #1 draft/unmerged.
