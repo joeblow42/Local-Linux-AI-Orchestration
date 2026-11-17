@@ -1,0 +1,77 @@
+{
+  "record_date": "2026-11-16",
+  "type": "SOURCE_FIRST_RP02_RP03_CONTRACT_REVIEW_CANDIDATE",
+  "source_package": {
+    "sha256": "9a48de5fa49420e470f003b7f3417277bd3aa2a6832a7b2c968d093004c2e37e",
+    "bytes": 3451941
+  },
+  "source_requirement_check": {
+    "original": 136,
+    "original_hash_pass": 136,
+    "source_id_match": 136,
+    "parent_need_match": 136
+  },
+  "quality_review": {
+    "reported_fail": 40,
+    "original_fail_with_previous_rewrite": 28,
+    "original_fail_without_previous_rewrite": 12,
+    "second_pass_28": {
+      "sustain_candidate": 21,
+      "refine_candidate": 5,
+      "retain_original": 2
+    },
+    "questioned_only": 96,
+    "questioned_only_material_new_challenges": [
+      "LAI-R1-N023-01",
+      "LAI-R1-N023-02",
+      "LAI-R1-N023-03",
+      "LAI-R1-N023-04",
+      "LAI-R1-N024-02",
+      "LAI-R1-N016-04"
+    ],
+    "questioned_only_fully_independently_accepted": false
+  },
+  "candidate_release_allocations": {
+    "R1": 104,
+    "R2": 17,
+    "R3": 15,
+    "approved": false
+  },
+  "interface": {
+    "original_ids": 19,
+    "focused_R1_contract_ids": [
+      "IF-01",
+      "IF-02",
+      "IF-03",
+      "IF-06"
+    ],
+    "source_pin_bifrost_commit": "e869c3f9adc96ea53c38694a21bb04a8e1085487",
+    "open_webui_exact_runtime_version": "UNVERIFIED",
+    "langgraph_exact_runtime_version": "UNVERIFIED",
+    "preferred_provisional_IF02": "THIN_TRUSTED_OPEN_WEBUI_PIPE_TO_SEPARATE_LOCAL_LANGGRAPH_HTTP_SERVICE",
+    "owner_selected": false,
+    "wire_schema_frozen": false
+  },
+  "oracle": {
+    "original_ids": 26,
+    "executed": 0,
+    "owner_accepted": 0
+  },
+  "owner_decisions_pending": [
+    "G_R_RELEASE_ASSIGNMENT_104_17_15",
+    "G_R_AVOID_UNJUSTIFIED_PRODUCT_SUBSYSTEMS",
+    "G_A_PROVISIONAL_IF02_ADAPTER_SELECTION"
+  ],
+  "source_sensitive_local_review_sha256": "137a879beb96b2f10d6d0b0218ec5c004948fb7d3fbb36a34ab37d1bd2a0f6c5",
+  "public_review_export_sha256": "d1fa1e6c47c26b75d0c3be765b293eae898ec71f54bac7be51b96e720424e493",
+  "states": {
+    "g_r": "BLOCKED_PENDING_OWNER_APPROVAL_AND_RESIDUAL_CRITERIA",
+    "g_a": "BLOCKED_PINNED_CLIENT_AND_CONTRACT_AUTHORITY",
+    "g1_gateway_runtime": "OWNER_HOLD",
+    "release1_fat": "NOT_RUN",
+    "candidate_pr": "DRAFT_UNMERGED"
+  },
+  "approved_changes_to_product_baseline": 0,
+  "paid_external_calls": 0,
+  "runtime_mutations": 0
+}
