@@ -61,3 +61,9 @@ Start with [updated engineering lead](./ENGINEERING_HANDOFF.md#10-engineering-co
 ## Next-conversation handoff — current entrypoint
 
 **[START NEXT CONVERSATION HERE: NEXT_CONVERSATION_HANDOFF_20261116.md](./NEXT_CONVERSATION_HANDOFF_20261116.md)** — verifies owner-approved A/A/A directions, 136-source screening, 28 candidate rewrites, RP-03 IF-02 provisional interface, G-R/G-A/G1 holds, original-source ZIP limitations and exact next engineering activities. The handoff was created after the 2026-11-16 checkpoint. Read at the **current PR HEAD**, not only the predecessor commit recorded inside the handoff.
+
+## Current continuation checkpoint — RP-02 through RP-04 candidate source review
+
+**[Read the latest verified RP-02/RP-03/RP-04 continuation checkpoint](./RP02_RP04_CONTINUATION_CHECKPOINT_20261116.md)**, prepared after the prior [next-conversation handoff](./NEXT_CONVERSATION_HANDOFF_20261116.md). It records a checked 136-original-ID positive/negative acceptance draft, independent hash crosswalk with an older quality audit, pinned-source Open WebUI 0.12.5 and LangGraph 1.2.19/Pipe review, LangGraph SQLite saver version evidence, and a 26-original-oracle plus 13 draft-falsification RP-04 review. All records remain **CANDIDATE**, G-R/G-A **NOT APPROVED**, G1 **OWNER HOLD**, oracles **NOT RUN**; the release assignments 104/17/15 remain owner approved. All PR work stays **draft/unmerged**.
+
+**Open owner interface question:** for R1 delegated task status/cancellation through the one approved provisional Pipe, prefer deterministic user control commands (`/task status <task-id>` and `/task cancel <task-id>`) vs demanding version-specific dedicated GUI controls. No UI Stop → LangGraph cancellation equivalence has been proven. See the current checkpoint for the bounded options; this question does not authorize code implementation or G-A baseline approval.
