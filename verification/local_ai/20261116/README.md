@@ -23,3 +23,14 @@ Original recovery ZIP bytes were made available in the **current source-inspecti
 
 - **[Seven derived R1 gaps and 26 candidate falsifiable oracles](./RP02_RP04_DERIVED_REQUIREMENTS_AND_ORACLES_CANDIDATE_20261116.md)** — 19 R1 cases (one conditional), six R2 cases, one R3; all NOT RUN.
 - **[Detailed source-first dispositions for all 19 interfaces](./RP03_19_SOURCE_FIRST_BOUNDARY_DISPOSITIONS_CANDIDATE_20261116.md)** — accountable producer/consumer boundaries and outstanding pinned-wire evidence; G-A not approved.
+
+## RP-02/RP-03/RP-04 next checkpoint — controlled candidate work (2026-11-16)
+
+Start with [updated engineering lead](./ENGINEERING_HANDOFF.md#10-engineering-continuation-checkpoint--controlled-source-first-disposition-2026-11-16).
+
+- [136-ID independent bounded disposition register](./RP02_136_INDEPENDENT_LINE_ITEM_DISPOSITIONS_CANDIDATE_20261116.csv) — 40 reviewed quality failures, 96 questioned-only, provisional 104/17/15; **no source originals included**.
+- [28 exact replacement wording proposals](./RP02_28_EXACT_WORDING_PROPOSALS_CANDIDATE_20261116.md) — new candidate text only; two focused QA corrections; no G-R authorization.
+- [Pinned Bifrost documentation and provisional IF-02 adapter comparison](./RP03_PINNED_SOURCE_AND_IF02_ADAPTER_PREPARATION_CANDIDATE_20261116.md) — tagged source, not installed-version proof or G-A authorization.
+- [Operational Release 1 FAT oracle proposal](./RP04_R1_OPERATIONAL_FIRST_ARTICLE_ORACLES_CANDIDATE_20261116.md) — 19 existing R1 original oracle IDs plus seven unapproved gap witnesses; all **NOT RUN**.
+
+**Continuity caveat:** the original ZIP and 136 exact original requirement statements remain outside this **public** GitHub repository. The current conversation has those exact files, but the GitHub-only index does not establish complete source recovery. Missing Rev0.16 authority JSON remains unresolved; G1 data collection/runtime verification remains **OWNER HOLD**. No source releases, external inference, paid calls or baseline promotion.
