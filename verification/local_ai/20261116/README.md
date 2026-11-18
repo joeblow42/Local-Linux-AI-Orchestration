@@ -82,3 +82,9 @@ Start with [updated engineering lead](./ENGINEERING_HANDOFF.md#10-engineering-co
 - [Reproducible standalone JavaScript in-memory mock tests](./verify_if02_in_memory_supervisor_candidate.js), 20/20 PASS when exact committed program was executed in isolated V8. These are candidate model tests, **not installed FAT**.
 - Material finding: an active chat response can queue status/cancel messages or trigger Open WebUI Stop, so supervisor task submission should give a prompt **durable task-ID acknowledgement** before longer work proceeds separately. This design refinement remains **G-A candidate**, not owner-approved wire schema.
 - Original 26 controlled oracles NOT RUN; G-R/G-A not approved; G1 hold active; PR #1 draft/unmerged.
+
+## 2026-11-17 — IF-02 native self-termination review and G-R/G-A candidate
+
+**[Latest IF-02 review checkpoint](./RP03_IF02_SELF_TERMINATION_REVIEW_CHECKPOINT_20261117.md)**, [source-pinned six-direction G-R/G-A candidate docket](./RP03_IF02_STOP_CANCEL_SELF_TERMINATION_G_R_G_A_REVIEW_CANDIDATE_20261117.md). Verified LangGraph 1.2.19 conditional `END` is graph completion; `interrupt()` is a resumable pause, not cancel. Existing Open WebUI Stop does not establish cancellation of an independent supervisor task. Reuse existing UI plus previously approved same-Pipe text command for task-ID cancellation; avoid another Stop button, REST self-cancel endpoint or R3 unattended scheduler. Exact terminal status semantics remain G-A candidate.
+
+**Static evidence:** 7/7 LangGraph source checks passed. No runtime tests, G1 service action or original oracle execution. G-R/G-A NOT APPROVED, G1 OWNER HOLD, PR #1 draft/unmerged.
