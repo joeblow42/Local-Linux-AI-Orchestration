@@ -11,7 +11,7 @@ from urllib import error, parse, request
 
 MAX_CHAT_BYTES = 8 * 1024 * 1024
 MAX_RESULT_CHARS = 500_000
-ID_RE = re.compile(r"[A-Za-z0-9._-]{1,128}\Z")
+ID_RE = re.compile(r"[A-Za-z0-9_-]{1,128}\Z")
 
 
 class _NoRedirect(request.HTTPRedirectHandler):
