@@ -1,0 +1,33 @@
+# IF-02 / IF-05 / IF-06 — minimum automatic-delivery interface delta
+
+**Status:** Candidate source/acceptance contract. NOT G-A FROZEN; NOT runtime verified or R1 FAT accepted.  
+**Owner-approved architecture:** LAI-OD-20261117-04, -05, -06, -07. A single trusted selected WebUI Pipe initiates delegated tasks; the independent local LangGraph supervisor owns task states; original chat is owned by WebUI; final response must appear automatically in that chat. Preferred *authorization direction*, not configured credential: operator-owned WebUI API key stored locally with access control; no key rotated/created.
+
+## Contract and bounded responsibilities
+
+| Boundary | Minimum request/source | Authorized receiver/action | Required evidence before accepting R1 | Fail-closed outcome |
+| --- | --- | --- | --- | --- |
+| **IF-02 submit** | Server-injected Pipe user identity, UI-originating **saved** chat ID and **existing assistant acknowledgement message ID**, bounded operator request, dedupe request identity | Supervisor creates a stable task ID and stores the task→chat/message reference and pending-delivery state atomically with acceptance | Task status readback and original chat assistant placeholder; source/actor not trusted merely because user text contains IDs | Unknown or absent chat/message identity → explicit submission error; never fabricate durable task |
+| **IF-06 task/checkpoint** | Supervisor task ID plus durable workflow thread reference and monotonic task-state version | LangGraph supervisor + local saver; no WebUI history copy | Existing ID and checkpoint recover after service restart; terminal result and delivery status are separately durable | Missing/corrupt checkpoint → recovery error, no false success |
+| **IF-02 finish** | Completed/failed/incomplete/cancelled terminal disposition and final rendered content from supervisor-owned state | Supervisor marks terminal and schedules bounded delivery from its existing task lifecycle; NO new daemon or R3 scheduler | Terminal response verified in supervisor-owned durable record; no new specialist step after accepted cancel | If result uncertain, do not deliver a fabricated completed answer |
+| **IF-05 write candidate** | Operator-approved local API key in supervisor (not a borrowed browser JWT) + immutable originating chat ID/message ID + **whole** final content | Existing pinned WebUI `POST /api/v1/chats/{id}/messages/{message_id}` handler (only on isolated test fixture until approved) | Authenticated owner-only write + persisted message readback; no unrelated chat/message changed; browser reload sees same content without further operator command | Unauthorized, stale/deleted placeholder, lost WebUI, API-key-disabled or insufficient permissions → delivery pending/failed, task terminal status unchanged |
+| **IF-05 readback** | API key and exact previously correlated chat ID | Existing pinned `GET /api/v1/chats/{id}` | Exact existing assistant message + parent ID, role and content match committed task result; do not trust socket event alone | Inconsistent response or missing message → do not mark delivered |
+| **IF-02 operator status/cancel** | One selected Pipe and explicit non-slash task-ID controls | Supervisor maintains durable task-state/accepted-cancel record | Works after original response closed and without completion-delivery API; UI Stop is not equivalent to supervisor cancel | Clear typed error for missing supervisor; no hidden premature completion |
+| **IF-UI observable outcome** | WebUI saved-chat listener updates original assistant placeholder | User sees automatically delivered terminal message in same chat; refresh/reconnect reads stored result | End-to-end isolated browser + HTTP + supervisor + persistence verification, including mid-delivery restart and retry | No false delivered/claimed complete based only on outgoing event |
+
+### Critical pinned-source limitations
+
+Open WebUI candidate v0.12.5 source `f7ac7ee10962ddec0017f5c29b6740d9b9c5faca` establishes that:
+- Existing chat update requires a user identity and checks chat ownership; it is **not** a task-specific scoped token protocol.
+- Per-user key creation replaces previous stored key. API key settings and path-prefix restrictions are shared configuration; **no key creation/rotation or global configuration change** is authorized by this design decision.
+- Message update is an **upsert**: a missing/deleted message ID may be inserted, so read-before-write alone is not a race-free guarantee. A real concurrent deletion/retry test can invalidate using that route unchanged; if so, make a narrowly scoped G-A owner decision rather than pretending the test passed.
+- SSE/Socket UI updates, response termination and a restarted supervisor do not imply completion delivery absent durable readback.
+
+### Concrete next evidence, not more paper mock iterations
+
+1. **Read-only integration preflight**: `[if02_readonly_delivery_preflight.py](./if02_readonly_delivery_preflight.py)` tests a pre-existing key and saved chat/assistant placeholder on an explicit **isolated loopback** fixture with GET only; checks no credential or chat text printed. **Does NOT test a real Open WebUI instance until explicitly run on isolated deployment.** Key creation and target G1 contact are prohibited here.
+2. After G-A authority and an isolated real Open WebUI + Pipe + supervisor environment, test **one real write** of finished task content into one pre-existing placeholder; independently read back, disconnect/reload, repeat same update idempotently, restart components, and delete placeholder during pending delivery. Verify no creation of a phantom answer or rewrite of an unrelated message. If the deletion race occurs, elevate minimal existing-WebUI guarded update as needed; do not add a second subsystem.
+3. Reconcile first-article acceptance against original `LAI-R1-N004-03` **without changing its source ID/hash**, and linked `LAI-R1-N004-01/02`, `LAI-R1-N007-01/02/03`, `LAI-R1-N008-01/02/03/04`, `IF-02/IF-05/IF-06/IF-UI`. Original 26 FAT oracles remain NOT_RUN. New script/spec artifacts are **supplemental**, not new original controlled test IDs.
+4. G1 runtime data collection/changes remain on owner HOLD; exact deployed versions and complete offline installation remain unverified. Formal G-A endpoint/error/state and G-R acceptance baseline owner approval is **pending** and is not inferred from Alternative A.
+
+**Gating verdict:** Operator-owned key direction is owner approved; product auth+delivery behavior is not verified. Engineering may prepare read-only isolated preflight and exact source/acceptance criteria, but may not silently create/rotate a key, contact G1, assert schema approval or pass FAT.
