@@ -61,3 +61,16 @@ All tests **NOT RUN**, all API fields/paths used here are **design candidates**.
 **Result: owner-approved acceptance outcome is feasible enough to merit a bounded interface prototype, but exact implementation has NOT been established.** Source shows first-party Open WebUI message updates; no source proof of a least-privilege autonomous caller and post-Pipe/restart reconciliation.
 
 Next: inspect pinned Open WebUI security/auth route and package deployment seams for an existing narrow supervisor→WebUI write path; decide if a small design adaptation is required. After G-A authorization, test with a real isolated non-G1 Open WebUI+Pipe+supervisor fixture, not another in-memory mock. Do not promote G-R/G-A, touch G1 or merge the PR.
+
+## 6. Further exact-source authentication review
+
+New pinned read: [`backend/open_webui/utils/auth.py`](https://github.com/open-webui/open-webui/blob/f7ac7ee10962ddec0017f5c29b6740d9b9c5faca/backend/open_webui/utils/auth.py), immutable blob `44d0c8c460603d3e44f5f2f42cf541991004a48e`, lines ~389–456 and 506–567:
+
+- `get_current_user` accepts bearer token/cookie/session token and routes `sk-` credentials to API key verification. `get_verified_user` requires an eligible user role. These are **identity mechanisms**, not a ready autonomous completion-delivery credential.
+- API-key use requires configuration to enable keys. When `auth.api_key.endpoint_restrictions` is enabled, `auth.api_key.allowed_endpoints` is a **configured allow-list of path prefixes**; the check uses `request.scope['path']` with exact/path-prefix matching. The source does **not** demonstrate per-task/per-message scoped capability authorization or a key restricted to one asynchronous callback.
+- [`backend/open_webui/main.py`](https://github.com/open-webui/open-webui/blob/f7ac7ee10962ddec0017f5c29b6740d9b9c5faca/backend/open_webui/main.py), blob `a1abf80e7980c25cfc1d7dbf2dd76c290fd7de7d`, line ~896 mounts the chats router under `/api/v1/chats`. Thus the concrete existing update route appears at **`POST /api/v1/chats/{id}/messages/{message_id}`** for this pinned source.
+- The chat-update route checks the **owner's authenticated identity**, so a separate non-owner service identity is not automatically eligible to update the operator's conversation. Reusing an operator-owned API key (if enabled and permitted) would require a documented local secret-ownership decision and review of breadth of access. Never assume a generic admin bypass or copy a browser session token into LangGraph.
+- Prefix restrictions such as allowing `/api/v1/chats` are not equivalent to permission to modify **only** one specific result placeholder, because that prefix would span other chat routes. Additional authorization or a narrower verified boundary may be needed; first perform a bounded design comparison rather than invent a new auth service.
+
+**Revised blocker:** The pinned sources establish a candidate **authenticated write path**, but do **not** establish a least-privilege restart-safe delivery caller. The outcome approval remains valid; this G-A implementation gap requires proof before choosing credential storage, exposing a new route or declaring Release 1 implemented.
+
