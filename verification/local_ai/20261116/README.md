@@ -88,3 +88,11 @@ Start with [updated engineering lead](./ENGINEERING_HANDOFF.md#10-engineering-co
 **[Latest IF-02 review checkpoint](./RP03_IF02_SELF_TERMINATION_REVIEW_CHECKPOINT_20261117.md)**, [source-pinned six-direction G-R/G-A candidate docket](./RP03_IF02_STOP_CANCEL_SELF_TERMINATION_G_R_G_A_REVIEW_CANDIDATE_20261117.md). Verified LangGraph 1.2.19 conditional `END` is graph completion; `interrupt()` is a resumable pause, not cancel. Existing Open WebUI Stop does not establish cancellation of an independent supervisor task. Reuse existing UI plus previously approved same-Pipe text command for task-ID cancellation; avoid another Stop button, REST self-cancel endpoint or R3 unattended scheduler. Exact terminal status semantics remain G-A candidate.
 
 **Static evidence:** 7/7 LangGraph source checks passed. No runtime tests, G1 service action or original oracle execution. G-R/G-A NOT APPROVED, G1 OWNER HOLD, PR #1 draft/unmerged.
+
+## 2026-11-17 — IF-02 six approved engineering directions; final-result delivery decision open
+
+**[Latest IF-02 engineering checkpoint](./RP03_IF02_SIX_DIRECTIONS_AND_G_R_G_A_REVIEW_CHECKPOINT_20261117.md)** and [minimum G-R/G-A candidate review packet](./RP03_IF02_GR_GA_MINIMUM_REVIEW_PACKET_AND_FINAL_DELIVERY_DECISION_CANDIDATE_20261117.md).
+
+Owner [LAI-OD-20261117-05](./OWNER_APPROVAL_IF02_SIX_ENGINEERING_DIRECTIONS_20261117.md) approved the **six provisional engineering directions**, **not** the G-R/G-A baselines; [source-linked crosswalk](./RP03_IF02_SIX_APPROVED_DIRECTIONS_GR_GA_CROSSWALK_CANDIDATE_20261117.json) preserves 136 requirement, 19 interface, 26 oracle identities and 14 unique R1 anchors. Pinned Open WebUI source supports conditional message persistence through event handlers but **does not prove** automatic final-result delivery after a delegated Pipe acknowledgement/restart.
+
+**One material owner acceptance interpretation is OPEN:** final completed response appearing automatically in the originating chat (**A**) versus only when the operator requests status/result by task ID (**B**). Source and candidate acceptance witness `LAI-R1-N004-03` do not decide automatic timing. No default selection assumed. G-R/G-A NOT APPROVED; G1 hold active; PR #1 draft/unmerged; original FAT tests NOT_RUN.
