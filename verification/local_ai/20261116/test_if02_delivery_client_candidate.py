@@ -173,6 +173,11 @@ class TestDelivery(unittest.TestCase):
         self.assertEqual(recreated['content'], self.kwargs['final_content'])
         self.assertIsNone(recreated['parentId'])
 
+    def test_dot_segments_cannot_be_used_as_ids(self):
+        value = dict(self.kwargs, chat_id="..")
+        self.assertEqual(self.client.deliver(**value).reason, "invalid_slot_identity")
+        self.assertEqual(self.store.post_count, 0)
+
     def test_non_loopback_refused(self):
         with self.assertRaisesRegex(ValueError,'isolated_numeric_loopback_required'):
             CandidateDeliveryClient('http://example.com:8888', 'fixture-key')
