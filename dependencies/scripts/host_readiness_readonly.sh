@@ -29,6 +29,13 @@ done
 if command -v python3.12 >/dev/null 2>&1; then
   python3.12 --version 2>&1 | sed 's/^/PYTHON312_VERSION=/'
 fi
+bundled_python="${LOCALAI_PYTHON_BIN:-/mnt/local-ai-storage/development/venvs/python/cpython-3.12.14-linux-x86_64-gnu/bin/python3.12}"
+if [[ -x "$bundled_python" ]]; then
+  printf 'CANDIDATE_BUNDLED_PYTHON=FOUND\n'
+  "$bundled_python" --version 2>&1 | sed 's/^/CANDIDATE_BUNDLED_PYTHON_VERSION=/'
+else
+  echo 'CANDIDATE_BUNDLED_PYTHON=NOT_FOUND'
+fi
 if [[ -r /proc/meminfo ]]; then
   awk '/^MemTotal:/{printf "RAM_TOTAL_KIB=%s\n",$2} /^SwapTotal:/{printf "SWAP_TOTAL_KIB=%s\n",$2}' /proc/meminfo
 fi
