@@ -1,3 +1,6 @@
+> **HISTORICAL WORKFLOW — SUPERSEDED FOR RELEASE 1 (2026-11-19).**
+> The 2026-10-31 three-component lock instructions below are retained as historical candidate evidence only. They are **not** the active Release 1 preparation procedure. Later owner decisions select **Bifrost OSS instead of LiteLLM** and exclude paid external providers from R1. The active `dependencies/scripts/generate_locks.sh` now proposes **two Python lock inputs only** (`open-webui` and `langgraph`); Bifrost OCI and Ollama binary/artifact provenance are tracked separately. **Do not execute any acquisition, installation, service mutation, G1 inspection, or key/configuration change** on the authority of this historical document. Verify target host and approve the current dependency closure before acting. No baseline or license clearance is implied.
+
 # License gate execution procedure — candidate, 2026-10-31
 
 ## Scope
