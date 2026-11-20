@@ -15,12 +15,16 @@ printf 'PYTHON_VERSION=%s\n' "$("$PY" --version 2>&1)"
 printf 'UV_VERSION=%s\n' "$(uv --version 2>&1)"
 printf 'STORAGE_AVAILABLE_BYTES=%s\n' "$(df -B1 --output=avail "$STORAGE" | awk 'NR==2{print $1}')"
 printf 'G1_DATA_BYTES=%s\n' "$(rootcmd du -sb -- "$DATA" | awk '{print $1}')"
-printf 'DOCKER_ROOT=%s\n' "$(rootcmd docker info --format '{{.DockerRootDir}}')"
+dockerroot="$(rootcmd docker info --format '{{.DockerRootDir}}')"
+printf 'DOCKER_ROOT=%s\n' "$dockerroot"
+[[ "$dockerroot" == "$STORAGE/infrastructure/docker" ]] || { echo 'STOP: Docker root changed'; exit 1; }
 info="$(rootcmd docker inspect --type container --format '{{.Name}}|{{.State.Running}}|{{if .State.Health}}{{.State.Health.Status}}{{else}}NONE{{end}}|{{.HostConfig.NetworkMode}}|{{.HostConfig.RestartPolicy.Name}}|{{.Image}}' bifrost-g1)" || { echo 'STOP: G1 inspect failed'; exit 1; }
 IFS='|' read -r cname running health network restart imageid <<< "$info"
 printf 'G1_CONTAINER=%s\nG1_RUNNING=%s\nG1_HEALTH=%s\nG1_NETWORK=%s\nG1_RESTART=%s\nG1_IMAGE_ID=%s\n' "$cname" "$running" "$health" "$network" "$restart" "$imageid"
-[[ "$cname" == /bifrost-g1 && "$running" == true && "$health" == healthy && "$network" == host ]] || { echo 'STOP: G1 state differs'; exit 1; }
-printf 'G1_IMAGE_REF=%s\n' "$(rootcmd docker inspect --type container --format '{{.Config.Image}}' bifrost-g1)"
+[[ "$cname" == /bifrost-g1 && "$running" == true && "$health" == healthy && "$network" == host && "$restart" == unless-stopped ]] || { echo 'STOP: G1 state differs'; exit 1; }
+image_ref="$(rootcmd docker inspect --type container --format '{{.Config.Image}}' bifrost-g1)"
+printf 'G1_IMAGE_REF=%s\n' "$image_ref"
+[[ "$image_ref" == 'maximhq/bifrost@sha256:a1c90607dcfd13c1fb2f9476ceb3bb24407a50ade7fdf3e61a59fb42b09e5c57' ]] || { echo 'STOP: G1 image reference changed'; exit 1; }
 mounts="$(rootcmd docker inspect --type container --format '{{range .Mounts}}{{println .Source "->" .Destination}}{{end}}' bifrost-g1)"
 grep -Fxq "$DATA -> /app/data" <<< "$mounts" || { echo 'STOP: G1 bind mount differs'; exit 1; }
 echo 'G1_MOUNT_MATCH=YES'
