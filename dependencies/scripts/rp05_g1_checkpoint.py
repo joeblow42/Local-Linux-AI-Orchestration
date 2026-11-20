@@ -96,9 +96,14 @@ def main():
     inspect = json.loads(docker(['inspect', '--type', 'container', 'bifrost-g1']))[0]
     if not inspect.get('State', {}).get('Running'):
         raise RuntimeError('G1 is not running; reconcile before checkpoint')
-    if not any(m.get('Source') == str(DATA) and m.get('Destination') == '/app/data'
-               for m in inspect.get('Mounts', [])):
-        raise RuntimeError('G1 data mount does not match the handoff')
+    mounts = inspect.get('Mounts', [])
+    if len(mounts) != 1 or not any(
+        m.get('Source') == str(DATA) and m.get('Destination') == '/app/data'
+        for m in mounts
+    ):
+        raise RuntimeError('G1 persistent mounts differ from the handoff; no incomplete checkpoint')
+    if inspect.get('Config', {}).get('Image') != 'maximhq/bifrost@sha256:a1c90607dcfd13c1fb2f9476ceb3bb24407a50ade7fdf3e61a59fb42b09e5c57':
+        raise RuntimeError('G1 image identity differs from the handoff')
     total = sum((Path(parent) / name).stat().st_size
                 for parent, _, names in os.walk(DATA)
                 for name in names if not (Path(parent) / name).is_symlink())
