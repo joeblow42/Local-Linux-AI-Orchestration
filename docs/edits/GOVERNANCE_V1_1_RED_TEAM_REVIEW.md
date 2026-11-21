@@ -55,3 +55,51 @@ The table maps the top-level sections. Rows share numbers for compactness. The t
 - **Keep short cross-references at the overlap points.** Guide **§11** can show how to prepare an owner decision using Standard **§1.3**. Guide **§12** can show how to execute a handoff using Standard **§14 and D.6**. Guide **§9** should retain the two FAT entry paths and refer to Standard **§15 and §19** for independent review and acceptance.
 
 I’d fix the **status definitions, package completion reference, and installation-first FAT wording** before approving either draft. Those are the points most likely to change what an agent reports or when it asks the owner to proceed. No documents were edited during this review.
+
+## Controlled update plan
+
+Use **one change register for both documents**. Give every red-team finding a stable ID, then edit both drafts in small batches. The committed review stays as the source record. The register tracks what we decided, what changed, and how we checked it.
+
+### Start with eight tracked findings
+
+| ID | Finding | Where to make the correction |
+|---|---|---|
+| RT-01 | Execution, verification, and acceptance states are blurred | Define the states in the Standard. Align the Guide’s glossary, sequence, and templates. |
+| RT-02 | `COMPLETE` points to the wrong section and lacks a scoped definition | Fix the Standard’s cross-reference and record vocabulary. Align the Guide’s design-only package example. |
+| RT-03 | Installation-first FAT is clear in §9.1 and ambiguous elsewhere | Align the Guide’s outcome states, readiness sequence, and FAT template. Check both installation-first and preinstalled FAT paths. |
+| RT-04 | Release authorization, publication, deployment, and sustainment are conflated | Define the distinctions in the Standard and apply them in the Guide. |
+| RT-05 | An ordinary handoff could be read as requiring acceptance-gate evidence | Clarify the Standard’s audit scope. Keep the Guide’s continuity checklist usable for blocked or incomplete work. |
+| RT-06 | The Guide leaves material oracle review applicability unclear | Put the rule and exception authority in the Standard. Point to it from the Guide. |
+| RT-07 | The reusable agent directive is narrower than the main instructions | Align the Guide’s directive with the authority hierarchy and permission to continue independent authorized work. |
+| RT-08 | The evidence denominator could omit required evidence that was never committed | Correct the Standard’s metric and align the Guide’s reporting template. |
+
+Each register entry should include the **source finding, affected clauses, approved disposition, exact revisions changed, verification example, and status**. If one issue affects multiple clauses, track those as subtasks under the same ID. Keep the proposed transfers of material between documents as **separate decisions**. A finding can be fixed even if we decide to retain the current section structure.
+
+### Edit and verify in three batches
+
+1. **Status and completion — RT-01, RT-02, RT-04.** Settle the vocabulary first. Check examples where a test ran and failed, a design-only package closed, and a release was authorized but deployment was still pending.
+2. **FAT and evidence — RT-03, RT-06, RT-08.** Walk both FAT entry paths. Check that prior G1 evidence can support readiness within its scope, that clean-host installation remains a result to witness, and that missing evidence remains visible in the denominator.
+3. **Authority and handoff — RT-05, RT-07.** Walk an interrupted project with a blocked gate and a newer published branch. Verify that an agent can hand off incomplete work and continue independent authorized work without treating either action as acceptance.
+
+Before editing, record the **exact draft files and checksums**. The Standard v1.1 draft is already versioned. The Guide v1.1 draft and its index change are still uncommitted, so the first action would be to preserve that draft as a separate baseline commit. Then commit each reviewed batch with its finding IDs and update the register in the same commit.
+
+A finding closes when its affected clauses and templates agree and the example produces the same decision under either document. At the end, reconcile **all eight IDs** against the original review. Anything deferred stays visible with its reason. The revised drafts can then go to you for approval as a pair.
+
+## Path to the two v2.0 documents
+
+The goal is **two separate v2.0 documents**: one Governance Standard and one Roadmap Planning and Execution Guide. A single change register will keep the edits coordinated.
+
+| Step | Action | What shows it’s done |
+|---|---|---|
+| **1. Freeze the inputs** | Record the exact v1.1 ODT filenames and checksums. Commit the pending Roadmap Guide v1.1 draft and index as a baseline. Preserve the red-team review and its update plan. | Both starting drafts and the full review can be recovered from Git. |
+| **2. Open one change register** | Create entries **RT-01 through RT-08**. For each, list every affected clause, glossary entry, template, and example in both documents. Give each proposed move between documents its own decision entry. | Every finding has an ID, scope, proposed correction, and verification example. |
+| **3. Create two v2.0 drafts** | Copy each frozen v1.1 ODT into a separate v2.0 draft. Label both as drafts and retain the original files. | There are exactly two editable v2.0 candidates with clear provenance. |
+| **4. Fix status and completion** | Resolve **RT-01, RT-02, and RT-04**. Define the states and scoped package completion in the Standard first, then align the Guide’s glossary, sequences, and templates. | Both drafts give the same answer for a failed test, a completed design-only package, and an authorized release with deployment pending. |
+| **5. Fix FAT and evidence rules** | Resolve **RT-03, RT-06, and RT-08**. Align the two FAT entry paths, independent review of material test expectations, and the denominator for required evidence. | Both drafts agree on installation-first and preinstalled FAT. A required piece of evidence stays visible even when it is missing. |
+| **6. Fix authority and handoff rules** | Resolve **RT-05 and RT-07**. Clarify ordinary continuity handoffs, formal acceptance handoffs, and what authorized work can continue when another step is blocked. | Both drafts let an agent hand off incomplete work without claiming acceptance or losing the blocker. |
+| **7. Decide what material to move** | Review the proposed transfers separately from the eight fixes. Decide whether to move detailed grouping comparisons and practical walkthroughs into the Guide or keep them in place with cross-references. | Every proposed move has a recorded disposition. Mandatory controls remain easy to find in the Standard. |
+| **8. Verify the drafts together** | Re-run the red-team scenarios across both full documents. Check the glossary, numbered clauses, templates, agent directive, and cross-references. Open and render both ODTs. | All eight findings have evidence of closure or an explicit deferral. Both files open and render correctly. |
+| **9. Present the pair for approval** | Provide both drafts, the change register, and a short summary of any deferred decisions. Decide which Standard version the Guide will cite when approved. | The approval identifies the exact versions of both documents and any conditions. |
+| **10. Publish the approved v2.0 pair** | Commit and publish both final ODTs, the governance index, and the completed change register. Update the project handoff to point to the approved versions. | GitHub has a versioned release record, local and remote are in sync, and the previous versions remain available. |
+
+**Working rule:** At the end of each editing batch, verify the associated scenarios before marking the findings closed. Commit the document changes and register update together so a future session can see exactly what changed and why.
