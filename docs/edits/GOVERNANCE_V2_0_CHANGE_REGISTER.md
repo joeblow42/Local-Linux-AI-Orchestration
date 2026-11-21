@@ -4,6 +4,8 @@ The two documents serve separate purposes. The Standard defines governing contro
 
 ## Frozen inputs
 
+Baseline commit `4d4e5c2` preserves both source drafts and the review.
+
 | Artifact | SHA-256 |
 | --- | --- |
 | `AI_Assisted_Software_Engineering_Governance_Standard_v1_1_DRAFT.odt` | `c4e426c646b87867409d51395eea0ce2fd88027ff2ed029a8b3914fd8885fc6f` |
@@ -13,10 +15,10 @@ The two documents serve separate purposes. The Standard defines governing contro
 
 | ID | Affected clauses | Draft disposition and verification scenario | Status |
 | --- | --- | --- | --- |
-| RT-01 | Standard §8.3, §15, D.1. Guide §2.1, §7.1, §8.4, §9.3, Template D | Track execution, verification, validation and acceptance separately. A failed test is executed with outcome FAIL. Its requirement remains unverified. | Open |
-| RT-02 | Standard §8.3, §15.2, §16.1, D.1–D.2. Guide §6.4, §7.1, Templates C and D | Scope package completion to the approved deliverable and applicable controls in §15.2. Close a design-only package without implying verified operation. | Open |
+| RT-01 | Standard §8.3, §15, D.1. Guide §2.1, §7.1, §8.4, §9.3, Template D | Track execution, verification, validation and acceptance separately. A failed test is executed with outcome FAIL. Its requirement remains unverified. | Draft correction verified in batch 1 |
+| RT-02 | Standard §8.3, §15.2, §16.1, D.1–D.2. Guide §6.4, §7.1, Templates C and D | Scope package completion to the approved deliverable and applicable controls in §15.2. Close a design-only package without implying verified operation. | Draft correction verified in batch 1 |
 | RT-03 | Guide §2.1, §4.4, §5.1, §9.1–9.2, Template F | Distinguish readiness for an installation-first FAT from readiness of a preinstalled article. Record installation and operation during the applicable FAT. | Open |
-| RT-04 | Standard §12.3 and D.1. Guide §2.1, §9.3 | Track repository integration, release authorization, publication, deployment and sustainment separately. An authorized release can remain unpublished and undeployed. | Open |
+| RT-04 | Standard §12.3 and D.1. Guide §2.1, §9.3 | Track repository integration, release authorization, publication, deployment and sustainment separately. An authorized release can remain unpublished and undeployed. | Draft correction verified in batch 1 |
 | RT-05 | Standard §14.2, §19, D.5–D.6. Guide §7.3, §12 | Distinguish continuity handoff from acceptance handoff. An incomplete project can transfer with missing evidence and blocked gates clearly recorded. | Open |
 | RT-06 | Standard §9.2, §15.2, §16.1, §18.4. Guide §2, §6.2, §7.1, §8.3 | Define material test expectations and scope of review in the approved plan. Record authority and risk of exceptions. Routine smoke evidence cannot stand in for independent acceptance evidence. | Open |
 | RT-07 | Standard §1.1 and §1.3. Guide §1.3, §3.4, §11 and §13 | Apply the hierarchy and distinguish authority from access. A blocked host mutation does not stop authorized independent work. | Open |
@@ -32,3 +34,11 @@ The two documents serve separate purposes. The Standard defines governing contro
 | ORG-04 | Repeated authority, handoff and FAT material | Keep the controlling clauses in the Standard and the practical steps in the Guide. Use cross-references for interpretation. |
 
 The proposed Guide v2.0 is intended to accompany Standard v2.0 if both are approved. Until then, an adopting project continues to use its approved baseline.
+
+
+## Batch 1 — status and completion
+
+- RT-01. A test that ran and failed has an executed case with outcome FAIL. The requirement cannot be reported as VERIFIED on that evidence. FAT execution and owner acceptance are separate in the Guide’s outcome definitions and in the Standard’s record rules.
+- RT-02. A design-only package with an approved design deliverable can become COMPLETE after scoped review and its closure decision. Both drafts keep implementation and operational verification pending. The reporting clause now references Standard §15.2, with COMPLETE defined in D.1.
+- RT-04. An authorized release with no distributed artifact or installed target is release authorized. Publication, deployment and sustainment remain separate. Both drafts keep Git merge as an integration event.
+- Verification. Walked each scenario against the revised clauses, checked the matching text and ODT containers, and verified both v1.1 input hashes. Owner approval is pending.
