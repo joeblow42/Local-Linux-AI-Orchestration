@@ -1,5 +1,7 @@
 # Local AI handoff after the packaged G1 installation
 
+For current instructions and governance references, read the [active handoff](LOCALAI_CODEX_HANDOFF_AFTER_G1_RP13_20261120.md). The checkpoint below is historical.
+
 The owner paused this project to work on another project. The last completed live work was an in-place Debian installation, offline staging, service activation, owner browser checks and follow-up authorization and recovery checks on G1. The owner selected a **separate computer with a fresh Bodhi Linux 7 AMD64 installation** for the clean-target FAT and will prepare it. Keep the existing G1 installation available while that computer is prepared. [RP-14 evidence and open gates](RP14_G1_REHEARSAL_AND_FAT_GATE_20261121.md)
 
 ## Resume instructions
