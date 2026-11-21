@@ -1,0 +1,105 @@
+requirement_id,candidate_engineering_status,evidence,remaining_verification_or_disposition,fat_acceptance
+LAI-R1-N001-01,PARTIAL,RP13_G1_PRIVATE_PACKAGE_TRANSPORT_AND_ROLLBACK_20261121.md,Clean target and independent witness remain open. Rehearsed compatible downgrade and offline Python closure,NOT_ACCEPTED
+LAI-R1-N001-02,ENGINEERING_WITNESS,RP06_RP08_EXISTING_G1_LIVE_WITNESS_20261120.md | RP12_G1_INTEGRATED_WORKLOAD_EVIDENCE_20261120.md,Independent installed FAT and exact baseline,NOT_ACCEPTED
+LAI-R1-N001-03,OPEN,,Report health status separately for all required R1 services; independently induce stopped service and observe changed status.,NOT_ACCEPTED
+LAI-R1-N001-04,OPEN,,Inspect the dated FAT host-environment record and independently compare the recorded data with the tested host.,NOT_ACCEPTED
+LAI-R1-N002-01,PARTIAL,RP06_RP08_EXISTING_G1_LIVE_WITNESS_20261120.md | RP11_G1_BACKUP_RESTORE_EVIDENCE_20261120.md,"Exact history sequence, restart and local provider isolation conditions need individual confirmation",NOT_ACCEPTED
+LAI-R1-N002-02,PARTIAL,RP06_RP08_EXISTING_G1_LIVE_WITNESS_20261120.md | RP11_G1_BACKUP_RESTORE_EVIDENCE_20261120.md,"Exact history sequence, restart and local provider isolation conditions need individual confirmation",NOT_ACCEPTED
+LAI-R1-N002-03,PARTIAL,RP06_RP08_EXISTING_G1_LIVE_WITNESS_20261120.md | RP11_G1_BACKUP_RESTORE_EVIDENCE_20261120.md,"Exact history sequence, restart and local provider isolation conditions need individual confirmation",NOT_ACCEPTED
+LAI-R1-N002-04,PARTIAL,RP06_RP08_EXISTING_G1_LIVE_WITNESS_20261120.md | RP11_G1_BACKUP_RESTORE_EVIDENCE_20261120.md,"Exact history sequence, restart and local provider isolation conditions need individual confirmation",NOT_ACCEPTED
+LAI-R1-N002-05,PARTIAL,RP06_RP08_EXISTING_G1_LIVE_WITNESS_20261120.md | RP11_G1_BACKUP_RESTORE_EVIDENCE_20261120.md,"Exact history sequence, restart and local provider isolation conditions need individual confirmation",NOT_ACCEPTED
+LAI-R1-N003-01,ENGINEERING_WITNESS,RP06_RP08_EXISTING_G1_LIVE_WITNESS_20261120.md | RP12_G1_INTEGRATED_WORKLOAD_EVIDENCE_20261120.md,Independent installed FAT and exact baseline,NOT_ACCEPTED
+LAI-R1-N003-02,PARTIAL,RP12_G1_INTEGRATED_WORKLOAD_EVIDENCE_20261120.md,"Compare selector, authorization and actual upstream dispatch under approved conditions",NOT_ACCEPTED
+LAI-R1-N003-03,ENGINEERING_WITNESS,RP06_RP08_EXISTING_G1_LIVE_WITNESS_20261120.md | RP12_G1_INTEGRATED_WORKLOAD_EVIDENCE_20261120.md,Independent installed FAT and exact baseline,NOT_ACCEPTED
+LAI-R1-N003-04,PARTIAL,RP12_G1_INTEGRATED_WORKLOAD_EVIDENCE_20261120.md,"Compare selector, authorization and actual upstream dispatch under approved conditions",NOT_ACCEPTED
+LAI-R1-N004-01,ENGINEERING_WITNESS,RP09_G1_SUPERVISOR_CHECKPOINT_20261120.md | RP12_G1_INTEGRATED_WORKLOAD_EVIDENCE_20261120.md,Independent installed FAT and exact baseline,NOT_ACCEPTED
+LAI-R1-N004-02,ENGINEERING_WITNESS,RP09_G1_SUPERVISOR_CHECKPOINT_20261120.md | RP12_G1_INTEGRATED_WORKLOAD_EVIDENCE_20261120.md,Independent installed FAT and exact baseline,NOT_ACCEPTED
+LAI-R1-N004-03,ENGINEERING_WITNESS,RP09_G1_SUPERVISOR_CHECKPOINT_20261120.md | RP12_G1_INTEGRATED_WORKLOAD_EVIDENCE_20261120.md,Independent installed FAT and exact baseline,NOT_ACCEPTED
+LAI-R1-N004-04,OPEN,,Stop supervisor before delegated submission; UI must show unavailability and no fictitious completion.,NOT_ACCEPTED
+LAI-R1-N005-01,ENGINEERING_WITNESS,RP09_G1_SUPERVISOR_CHECKPOINT_20261120.md | RP12_G1_INTEGRATED_WORKLOAD_EVIDENCE_20261120.md,Independent installed FAT and exact baseline,NOT_ACCEPTED
+LAI-R1-N005-02,PARTIAL,RP09_G1_SUPERVISOR_CHECKPOINT_20261120.md,"Exact record shape, assertions and independent readback remain to be confirmed",NOT_ACCEPTED
+LAI-R1-N005-03,PARTIAL,RP09_G1_SUPERVISOR_CHECKPOINT_20261120.md,"Exact record shape, assertions and independent readback remain to be confirmed",NOT_ACCEPTED
+LAI-R1-N005-04,PARTIAL,RP09_G1_SUPERVISOR_CHECKPOINT_20261120.md,"Exact record shape, assertions and independent readback remain to be confirmed",NOT_ACCEPTED
+LAI-R1-N005-05,PARTIAL,RP09_G1_SUPERVISOR_CHECKPOINT_20261120.md,"Exact record shape, assertions and independent readback remain to be confirmed",NOT_ACCEPTED
+LAI-R1-N006-01,OPEN,,Induce one specialist error; recorded invocation state differs from successful specialist state.,NOT_ACCEPTED
+LAI-R1-N006-02,OPEN,,Withhold a required specialist result; final output explicitly identifies incomplete coverage.,NOT_ACCEPTED
+LAI-R1-N006-03,OPEN,,Cause one specialist to fail; confirm its failure is visible in task state and excluded from successful verified contributions.,NOT_ACCEPTED
+LAI-R1-N006-04,OPEN,,Induce classified specialist failure; preserve original error category across task status and diagnostic result.,NOT_ACCEPTED
+LAI-R1-N007-01,ENGINEERING_WITNESS,RP09_G1_SUPERVISOR_CHECKPOINT_20261120.md | RP12_G1_INTEGRATED_WORKLOAD_EVIDENCE_20261120.md,Independent installed FAT and exact baseline,NOT_ACCEPTED
+LAI-R1-N007-02,ENGINEERING_WITNESS,RP09_G1_SUPERVISOR_CHECKPOINT_20261120.md | RP12_G1_INTEGRATED_WORKLOAD_EVIDENCE_20261120.md,Independent installed FAT and exact baseline,NOT_ACCEPTED
+LAI-R1-N007-03,ENGINEERING_WITNESS,RP09_G1_SUPERVISOR_CHECKPOINT_20261120.md | RP12_G1_INTEGRATED_WORKLOAD_EVIDENCE_20261120.md,Independent installed FAT and exact baseline,NOT_ACCEPTED
+LAI-R1-N007-04,PARTIAL,RP09_G1_SUPERVISOR_CHECKPOINT_20261120.md,"Exact record shape, assertions and independent readback remain to be confirmed",NOT_ACCEPTED
+LAI-R1-N008-01,PARTIAL,RP09_G1_SUPERVISOR_CHECKPOINT_20261120.md,"Exact record shape, assertions and independent readback remain to be confirmed",NOT_ACCEPTED
+LAI-R1-N008-02,ENGINEERING_WITNESS,RP09_G1_SUPERVISOR_CHECKPOINT_20261120.md | RP12_G1_INTEGRATED_WORKLOAD_EVIDENCE_20261120.md,Independent installed FAT and exact baseline,NOT_ACCEPTED
+LAI-R1-N008-03,PARTIAL,RP09_G1_SUPERVISOR_CHECKPOINT_20261120.md,"Exact record shape, assertions and independent readback remain to be confirmed",NOT_ACCEPTED
+LAI-R1-N008-04,OPEN,,Supply missing and corrupt checkpoint fixtures; state must report recovery error rather than success.,NOT_ACCEPTED
+LAI-R1-N008-05,PARTIAL,RP09_G1_SUPERVISOR_CHECKPOINT_20261120.md,"Exact record shape, assertions and independent readback remain to be confirmed",NOT_ACCEPTED
+LAI-R1-N010-01,PARTIAL,RP10_G1_METADATA_RETENTION_EVIDENCE_20261120.md | RP12_G1_INTEGRATED_WORKLOAD_EVIDENCE_20261120.md,"Complete diagnostic scope, seeded markers and independent comparison remain open",NOT_ACCEPTED
+LAI-R1-N010-02,OPEN,,"Exercise all R1 paths with network observation; confirm no external application telemetry, excluding authorized dependency/model downloads.",NOT_ACCEPTED
+LAI-R1-N010-03,ENGINEERING_WITNESS,RP10_G1_METADATA_RETENTION_EVIDENCE_20261120.md,Independent installed FAT and exact baseline,NOT_ACCEPTED
+LAI-R1-N010-04,PARTIAL,RP11_G1_BACKUP_RESTORE_EVIDENCE_20261120.md,"Same-laptop restore evidence. Independent clean-host, corruption and restored authorized route checks remain applicable",NOT_ACCEPTED
+LAI-R1-N010-05,PARTIAL,RP10_G1_METADATA_RETENTION_EVIDENCE_20261120.md | RP12_G1_INTEGRATED_WORKLOAD_EVIDENCE_20261120.md,"Complete diagnostic scope, seeded markers and independent comparison remain open",NOT_ACCEPTED
+LAI-R1-N010-06,PARTIAL,RP10_G1_METADATA_RETENTION_EVIDENCE_20261120.md | RP12_G1_INTEGRATED_WORKLOAD_EVIDENCE_20261120.md,"Complete diagnostic scope, seeded markers and independent comparison remain open",NOT_ACCEPTED
+LAI-R1-N011-01,PARTIAL,RP06_INC01_EXISTING_AUTH_WITNESS_20261120.md,"Exact key cases, unchanged management state and zero independent upstream dispatch remain to be confirmed",NOT_ACCEPTED
+LAI-R1-N011-02,PARTIAL,RP06_INC01_EXISTING_AUTH_WITNESS_20261120.md,"Exact key cases, unchanged management state and zero independent upstream dispatch remain to be confirmed",NOT_ACCEPTED
+LAI-R1-N011-03,PARTIAL,RP06_INC01_EXISTING_AUTH_WITNESS_20261120.md,"Exact key cases, unchanged management state and zero independent upstream dispatch remain to be confirmed",NOT_ACCEPTED
+LAI-R1-N011-04,PARTIAL,RP06_INC01_EXISTING_AUTH_WITNESS_20261120.md,"Exact key cases, unchanged management state and zero independent upstream dispatch remain to be confirmed",NOT_ACCEPTED
+LAI-R1-N011-05,PARTIAL,RP10_G1_METADATA_RETENTION_EVIDENCE_20261120.md | RP12_G1_INTEGRATED_WORKLOAD_EVIDENCE_20261120.md,"Complete diagnostic scope, seeded markers and independent comparison remain open",NOT_ACCEPTED
+LAI-R1-N011-06,DISPOSITION_PENDING,RP09_G1_SUPERVISOR_CHECKPOINT_20261120.md,Confirm exact tool applicability or proposed retirement in controlled G-R review,NOT_ACCEPTED
+LAI-R1-N012-01,PARTIAL,RP12_G1_INTEGRATED_WORKLOAD_EVIDENCE_20261120.md,"Compare selector, authorization and actual upstream dispatch under approved conditions",NOT_ACCEPTED
+LAI-R1-N012-03,PARTIAL,RP12_G1_INTEGRATED_WORKLOAD_EVIDENCE_20261120.md,"Compare selector, authorization and actual upstream dispatch under approved conditions",NOT_ACCEPTED
+LAI-R1-N012-04,PARTIAL,RP12_G1_INTEGRATED_WORKLOAD_EVIDENCE_20261120.md,"Compare selector, authorization and actual upstream dispatch under approved conditions",NOT_ACCEPTED
+LAI-R1-N012-05,OPEN,,Compare routing decision's permission revision to effective Bifrost configuration; mark interface gap if exact revision unavailable.,NOT_ACCEPTED
+LAI-R1-N015-01,ENGINEERING_WITNESS,RP06_RP08_EXISTING_G1_LIVE_WITNESS_20261120.md | RP12_G1_INTEGRATED_WORKLOAD_EVIDENCE_20261120.md,Independent installed FAT and exact baseline,NOT_ACCEPTED
+LAI-R1-N015-02,ENGINEERING_WITNESS,RP06_RP08_EXISTING_G1_LIVE_WITNESS_20261120.md | RP12_G1_INTEGRATED_WORKLOAD_EVIDENCE_20261120.md,Independent installed FAT and exact baseline,NOT_ACCEPTED
+LAI-R1-N015-03,OPEN,,"During local-only request, independently observe zero hosted inference fallback/egress even when Ollama unavailable.",NOT_ACCEPTED
+LAI-R1-N015-04,OPEN,,Start local Ollama unavailable/not ready; confirm inference is not reported ready until supported service readiness evidence is obtained.,NOT_ACCEPTED
+LAI-R1-N015-05,OPEN,,Disconnect Ollama; confirm local dependency failure instead of hosted fallback or false success.,NOT_ACCEPTED
+LAI-R1-N016-01,PARTIAL,RP06_RP08_EXISTING_G1_LIVE_WITNESS_20261120.md | RP12_G1_INTEGRATED_WORKLOAD_EVIDENCE_20261120.md,"Exact interface baseline, negative paths and independent upstream trace remain open",NOT_ACCEPTED
+LAI-R1-N016-02,PARTIAL,RP06_RP08_EXISTING_G1_LIVE_WITNESS_20261120.md | RP12_G1_INTEGRATED_WORKLOAD_EVIDENCE_20261120.md,"Exact interface baseline, negative paths and independent upstream trace remain open",NOT_ACCEPTED
+LAI-R1-N016-03,DISPOSITION_PENDING,RP09_G1_SUPERVISOR_CHECKPOINT_20261120.md,Confirm exact tool applicability or proposed retirement in controlled G-R review,NOT_ACCEPTED
+LAI-R1-N016-04,DISPOSITION_PENDING,RP09_G1_SUPERVISOR_CHECKPOINT_20261120.md,Confirm exact tool applicability or proposed retirement in controlled G-R review,NOT_ACCEPTED
+LAI-R1-N016-05,PARTIAL,RP06_RP08_EXISTING_G1_LIVE_WITNESS_20261120.md | RP12_G1_INTEGRATED_WORKLOAD_EVIDENCE_20261120.md,"Exact interface baseline, negative paths and independent upstream trace remain open",NOT_ACCEPTED
+LAI-R1-N016-06,PARTIAL,RP06_RP08_EXISTING_G1_LIVE_WITNESS_20261120.md | RP12_G1_INTEGRATED_WORKLOAD_EVIDENCE_20261120.md,"Exact interface baseline, negative paths and independent upstream trace remain open",NOT_ACCEPTED
+LAI-R1-N016-07,PARTIAL,RP06_RP08_EXISTING_G1_LIVE_WITNESS_20261120.md | RP12_G1_INTEGRATED_WORKLOAD_EVIDENCE_20261120.md,"Exact interface baseline, negative paths and independent upstream trace remain open",NOT_ACCEPTED
+LAI-R1-N017-01,ENGINEERING_WITNESS,RP09_G1_SUPERVISOR_CHECKPOINT_20261120.md | RP12_G1_INTEGRATED_WORKLOAD_EVIDENCE_20261120.md,Independent installed FAT and exact baseline,NOT_ACCEPTED
+LAI-R1-N017-02,ENGINEERING_WITNESS,RP09_G1_SUPERVISOR_CHECKPOINT_20261120.md | RP12_G1_INTEGRATED_WORKLOAD_EVIDENCE_20261120.md,Independent installed FAT and exact baseline,NOT_ACCEPTED
+LAI-R1-N017-03,PARTIAL,RP09_G1_SUPERVISOR_CHECKPOINT_20261120.md,"Exact record shape, assertions and independent readback remain to be confirmed",NOT_ACCEPTED
+LAI-R1-N017-04,ENGINEERING_WITNESS,RP06_RP08_EXISTING_G1_LIVE_WITNESS_20261120.md | RP12_G1_INTEGRATED_WORKLOAD_EVIDENCE_20261120.md,Independent installed FAT and exact baseline,NOT_ACCEPTED
+LAI-R1-N017-05,PARTIAL,RP13_G1_PRIVATE_PACKAGE_TRANSPORT_AND_ROLLBACK_20261121.md,Clean target and independent witness remain open. Rehearsed compatible downgrade and offline Python closure,NOT_ACCEPTED
+LAI-R1-N018-01,DISPOSITION_PENDING,RP09_G1_SUPERVISOR_CHECKPOINT_20261120.md,Confirm exact tool applicability or proposed retirement in controlled G-R review,NOT_ACCEPTED
+LAI-R1-N018-02,DISPOSITION_PENDING,RP09_G1_SUPERVISOR_CHECKPOINT_20261120.md,Confirm exact tool applicability or proposed retirement in controlled G-R review,NOT_ACCEPTED
+LAI-R1-N018-03,DISPOSITION_PENDING,RP09_G1_SUPERVISOR_CHECKPOINT_20261120.md,Confirm exact tool applicability or proposed retirement in controlled G-R review,NOT_ACCEPTED
+LAI-R1-N018-04,DISPOSITION_PENDING,RP09_G1_SUPERVISOR_CHECKPOINT_20261120.md,Confirm exact tool applicability or proposed retirement in controlled G-R review,NOT_ACCEPTED
+LAI-R1-N018-05,DISPOSITION_PENDING,RP09_G1_SUPERVISOR_CHECKPOINT_20261120.md,Confirm exact tool applicability or proposed retirement in controlled G-R review,NOT_ACCEPTED
+LAI-R1-N019-01,OPEN,,Remove required data mount before startup; write-capable services refuse startup or safe-write policy acts.,NOT_ACCEPTED
+LAI-R1-N019-02,OPEN,,Start required R1 stack from stopped state; verify dependency order using existing service manager.,NOT_ACCEPTED
+LAI-R1-N019-03,OPEN,,Induce one required service unavailable and another degraded; verify distinct observable health states using existing service instrumentation.,NOT_ACCEPTED
+LAI-R1-N019-04,OPEN,,"Restart supported host; required services, history, task/checkpoint and local routes recover without reconfiguration.",NOT_ACCEPTED
+LAI-R1-N019-05,OPEN,,Start with application mount missing; inspect underlying directory and confirm no unintended writes.,NOT_ACCEPTED
+LAI-R1-N020-01,PARTIAL,RP11_G1_BACKUP_RESTORE_EVIDENCE_20261120.md,"Same-laptop restore evidence. Independent clean-host, corruption and restored authorized route checks remain applicable",NOT_ACCEPTED
+LAI-R1-N020-02,PARTIAL,RP11_G1_BACKUP_RESTORE_EVIDENCE_20261120.md,"Same-laptop restore evidence. Independent clean-host, corruption and restored authorized route checks remain applicable",NOT_ACCEPTED
+LAI-R1-N020-03,PARTIAL,RP11_G1_BACKUP_RESTORE_EVIDENCE_20261120.md,"Same-laptop restore evidence. Independent clean-host, corruption and restored authorized route checks remain applicable",NOT_ACCEPTED
+LAI-R1-N020-04,PARTIAL,RP11_G1_BACKUP_RESTORE_EVIDENCE_20261120.md,"Same-laptop restore evidence. Independent clean-host, corruption and restored authorized route checks remain applicable",NOT_ACCEPTED
+LAI-R1-N020-05,PARTIAL,RP11_G1_BACKUP_RESTORE_EVIDENCE_20261120.md,"Same-laptop restore evidence. Independent clean-host, corruption and restored authorized route checks remain applicable",NOT_ACCEPTED
+LAI-R1-N021-01,PARTIAL,RP13_G1_PRIVATE_PACKAGE_TRANSPORT_AND_ROLLBACK_20261121.md,Clean target and independent witness remain open. Rehearsed compatible downgrade and offline Python closure,NOT_ACCEPTED
+LAI-R1-N021-02,PARTIAL,RP13_G1_PRIVATE_PACKAGE_TRANSPORT_AND_ROLLBACK_20261121.md,Clean target and independent witness remain open. Rehearsed compatible downgrade and offline Python closure,NOT_ACCEPTED
+LAI-R1-N021-03,PARTIAL,RP13_G1_PROVENANCE_FOLLOWUP_20261120.md | RP13_G1_PRIVATE_PACKAGE_TRANSPORT_AND_ROLLBACK_20261121.md,"Public redistribution, full notices and corresponding-source review remain open",NOT_ACCEPTED
+LAI-R1-N021-04,PARTIAL,RP13_G1_PRIVATE_PACKAGE_TRANSPORT_AND_ROLLBACK_20261121.md,Clean target and independent witness remain open. Rehearsed compatible downgrade and offline Python closure,NOT_ACCEPTED
+LAI-R1-N021-05,PARTIAL,RP13_G1_PRIVATE_PACKAGE_TRANSPORT_AND_ROLLBACK_20261121.md,Clean target and independent witness remain open. Rehearsed compatible downgrade and offline Python closure,NOT_ACCEPTED
+LAI-R1-N021-06,PARTIAL,RP13_G1_PRIVATE_PACKAGE_TRANSPORT_AND_ROLLBACK_20261121.md,Clean target and independent witness remain open. Rehearsed compatible downgrade and offline Python closure,NOT_ACCEPTED
+LAI-R1-N022-01,PARTIAL,RP13_G1_PROVENANCE_FOLLOWUP_20261120.md | RP13_G1_PRIVATE_PACKAGE_TRANSPORT_AND_ROLLBACK_20261121.md,"Public redistribution, full notices and corresponding-source review remain open",NOT_ACCEPTED
+LAI-R1-N022-02,ENGINEERING_WITNESS,RP12_G1_INTEGRATED_WORKLOAD_EVIDENCE_20261120.md,Independent installed FAT and exact baseline,NOT_ACCEPTED
+LAI-R1-N022-03,PARTIAL,RP13_G1_PROVENANCE_FOLLOWUP_20261120.md | RP13_G1_PRIVATE_PACKAGE_TRANSPORT_AND_ROLLBACK_20261121.md,"Public redistribution, full notices and corresponding-source review remain open",NOT_ACCEPTED
+LAI-R1-N022-04,PARTIAL,RP13_G1_PROVENANCE_FOLLOWUP_20261120.md | RP13_G1_PRIVATE_PACKAGE_TRANSPORT_AND_ROLLBACK_20261121.md,"Public redistribution, full notices and corresponding-source review remain open",NOT_ACCEPTED
+LAI-R1-N022-05,DISPOSITION_PENDING,RP09_G1_SUPERVISOR_CHECKPOINT_20261120.md,Confirm exact tool applicability or proposed retirement in controlled G-R review,NOT_ACCEPTED
+LAI-R1-N023-01,PARTIAL,RP12_G1_INTEGRATED_WORKLOAD_EVIDENCE_20261120.md,Independent capacity measurements and approved thresholds remain open,NOT_ACCEPTED
+LAI-R1-N023-02,PARTIAL,RP12_G1_INTEGRATED_WORKLOAD_EVIDENCE_20261120.md,Independent capacity measurements and approved thresholds remain open,NOT_ACCEPTED
+LAI-R1-N023-03,PARTIAL,RP12_G1_INTEGRATED_WORKLOAD_EVIDENCE_20261120.md,Independent capacity measurements and approved thresholds remain open,NOT_ACCEPTED
+LAI-R1-N023-04,PARTIAL,RP12_G1_INTEGRATED_WORKLOAD_EVIDENCE_20261120.md,Independent capacity measurements and approved thresholds remain open,NOT_ACCEPTED
+LAI-R1-N023-05,PARTIAL,RP12_G1_INTEGRATED_WORKLOAD_EVIDENCE_20261120.md,Independent capacity measurements and approved thresholds remain open,NOT_ACCEPTED
+LAI-R1-N024-01,PARTIAL,RP10_G1_METADATA_RETENTION_EVIDENCE_20261120.md | RP12_G1_INTEGRATED_WORKLOAD_EVIDENCE_20261120.md,"Complete diagnostic scope, seeded markers and independent comparison remain open",NOT_ACCEPTED
+LAI-R1-N024-02,PARTIAL,RP10_G1_METADATA_RETENTION_EVIDENCE_20261120.md | RP12_G1_INTEGRATED_WORKLOAD_EVIDENCE_20261120.md,"Complete diagnostic scope, seeded markers and independent comparison remain open",NOT_ACCEPTED
+LAI-R1-N024-03,PARTIAL,RP10_G1_METADATA_RETENTION_EVIDENCE_20261120.md | RP12_G1_INTEGRATED_WORKLOAD_EVIDENCE_20261120.md,"Complete diagnostic scope, seeded markers and independent comparison remain open",NOT_ACCEPTED
+LAI-R1-N024-04,PARTIAL,RP06_RP08_EXISTING_G1_LIVE_WITNESS_20261120.md | RP12_G1_INTEGRATED_WORKLOAD_EVIDENCE_20261120.md,"Exact interface baseline, negative paths and independent upstream trace remain open",NOT_ACCEPTED
+LAI-R1-N024-05,PARTIAL,RP10_G1_METADATA_RETENTION_EVIDENCE_20261120.md | RP12_G1_INTEGRATED_WORKLOAD_EVIDENCE_20261120.md,"Complete diagnostic scope, seeded markers and independent comparison remain open",NOT_ACCEPTED

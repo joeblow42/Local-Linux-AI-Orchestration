@@ -1,0 +1,10 @@
+# RP-06 through RP-08 existing G1 live witness
+
+**Date:** 2026-11-20. **Scope:** bounded Release 1 checks on the existing installation under the owner-approved increment dispositions.
+
+- **RP-06.INC-03:** Host socket inspection found four loopback-only listeners for Open WebUI, LangGraph, Bifrost, and Ollama. Both new service data directories had mode 0700 and their databases had mode 0600. The Open WebUI signing-key file and both user unit files had mode 0600. Read-only configuration inspection confirmed a single loopback Bifrost connection, disabled direct Ollama access, and disabled signup. The user-service journal sample had zero matches for the Bifrost virtual-key format. Coverage excludes Bifrost container logs.
+- **RP-07:** The operator observed a successful direct Open WebUI chat and earlier context-limit errors. Read-only inspection found the successful reply and stored assistant error records in Open WebUI's SQLite history. The live Bifrost stream returned the expected reply in SSE deltas and a termination marker. The SSE observation was at the gateway, with browser event timing outside its scope.
+- **RP-08:** The authenticated Bifrost model list contained the exact provider-qualified model ID, and Ollama reported the matching local model resident after the stream. A direct local inference returned nonzero prompt and generation token counts. A deliberately short client deadline produced a timeout, followed by a successful normal-deadline Bifrost request. This exercises client timeout and subsequent recovery. Gateway-enforced timeout and upstream cancellation remain unverified.
+- **Restart witness:** The operator restarted Ollama and reported its systemd state as active. A follow-up local request verified that Ollama listed the expected tag and that Bifrost returned the expected reply through that model. Bifrost required no restart.
+
+RP-06.INC-02 remains removed as standalone work. Integrated telemetry, restart, and FAT coverage follows the approved roadmap. No FAT oracle status changed.

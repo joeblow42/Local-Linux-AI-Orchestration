@@ -1,0 +1,6 @@
+# RP-10 existing G1 metadata and retention witness
+
+- The running supervisor records an internal task ID, stage, result disposition, observation time, elapsed milliseconds, and two token counts in a separate SQLite table. Counts absent from the gateway response are stored as NULL. The supervisor no longer emits per-request access log lines.
+- A real delegated task produced one record for each of analysis, review, and synthesis. The gateway supplied all six token fields. Neither the test prompt marker nor the Open WebUI key appeared in the sampled metadata. The live result was delivered and the verification conversation was archived.
+- The same purge routine used by the service was verified against a disposable SQLite database. It removed a row older than 30 days, preserved rows at and newer than the cutoff, and left durable task state intact. The worker runs the purge at startup and hourly while processing its queue.
+- This evidence covers the new supervisor diagnostic table. It excludes gateway/container log retention, WebUI conversation history, LangGraph execution checkpoints, and historical journal entries. Shared privacy/error verification follows RP-06/RP-12 per the approved roadmap.

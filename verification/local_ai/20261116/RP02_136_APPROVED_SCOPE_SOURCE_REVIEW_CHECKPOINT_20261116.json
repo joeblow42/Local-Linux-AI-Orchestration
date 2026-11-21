@@ -1,0 +1,102 @@
+{
+  "record_date": "2026-11-16",
+  "checkpoint": "RP02_COMPLETE_SOURCE_SCREEN_AND_OWNER_AAA_DIRECTION",
+  "source_archive": {
+    "name": "LocalAI_Engineering_Knowledge_Transfer_Recovery_20261116.zip",
+    "bytes": 3451941,
+    "sha256": "9a48de5fa49420e470f003b7f3417277bd3aa2a6832a7b2c968d093004c2e37e"
+  },
+  "original_requirement_source": {
+    "count": 136,
+    "exact_statement_hash_verified": 136,
+    "source_ids_verified": 136,
+    "parent_need_link_verified": 136,
+    "validated_needs": 27,
+    "original_statement_bytes_modified": 0
+  },
+  "owner_approval": {
+    "source": "owner message: A is approved for each",
+    "decision_ids": [
+      "LAI-OD-20261116-01",
+      "LAI-OD-20261116-02",
+      "LAI-OD-20261116-03"
+    ],
+    "release_allocation": {
+      "R1": 104,
+      "R2": 17,
+      "R3": 15
+    },
+    "release_allocation_status": "OWNER_APPROVED_DIRECTION",
+    "unnecessary_subsystem_elimination": "OWNER_APPROVED_DIRECTION",
+    "IF02_thin_pipe": "PROVISIONAL_OWNER_APPROVED_DIRECTION_PENDING_G_A"
+  },
+  "quality_review": {
+    "reported_fail": 40,
+    "questioned_only": 96,
+    "questioned_only_scope": {
+      "R1": 75,
+      "R2": 12,
+      "R3": 9
+    },
+    "fail_group": {
+      "former_rewrite": 28,
+      "sustain_candidate": 21,
+      "refine_candidate": 5,
+      "revert_to_original": 2,
+      "nonrewrite_disposition": 12
+    },
+    "questioned_group": {
+      "retain_ordinary_pending_G_R": 43,
+      "targeted_qualifications_pending_G_R": 30,
+      "new_rewrites_pending_G_R": 2,
+      "deferred_approved_release": 21
+    },
+    "active_rewrite_candidates": 28,
+    "originals_without_active_rewrite": 108
+  },
+  "github_artifacts": {
+    "owner_release_register": {
+      "path": "verification/local_ai/20261116/OWNER_APPROVED_136_RELEASE_ASSIGNMENTS_20261116.csv",
+      "git_blob_sha": "bc4c55af3f16ac9c2d5e00e2d87ce83d8dca9f65",
+      "rows": 136
+    },
+    "questioned_screen": {
+      "path": "verification/local_ai/20261116/RP02_96_QUESTIONED_ONLY_SOURCE_FIRST_SCREEN_CANDIDATE_20261116.csv",
+      "git_blob_sha": "163a67ab2d852334c9b7e2160020eb15bbecee5e",
+      "rows": 96
+    },
+    "candidate_rewrites": {
+      "path": "verification/local_ai/20261116/RP02_28_CONSOLIDATED_EXACT_WORDING_CANDIDATE_20261116.csv",
+      "git_blob_sha": "fd116baa99e07c1daa0bd99999500bf392d3a4c5",
+      "rows": 28
+    }
+  },
+  "source_sensitive_local_files": {
+    "questioned_full_local_sha256": "667aa4690b72b7a54d3718f089bae318247afddef3da997e83acff5bdeb10366",
+    "consolidated_writing_local_sha256": "cf31d3008b90f119a211673705dff367426902af54baef7b53eeac6f63f652ae"
+  },
+  "states": {
+    "G_R": "NOT_APPROVED_REQUIRES_ACCEPTANCE_CRITERIA_AND_EXACT_WORDING",
+    "G_A": "NOT_APPROVED_PINNED_VERSION_CONTRACT",
+    "G1_runtime": "OWNER_HOLD",
+    "RP04_oracles": "NOT_RUN",
+    "FAT": "NOT_RUN",
+    "PR": "DRAFT_UNMERGED"
+  },
+  "open_next": {
+    "acceptance_policy": [
+      "supervisor task cancel/restart state transitions",
+      "30-day operational metadata expiration and purge mechanism",
+      "host storage and concurrency threshold measured from actual target",
+      "supported rollback/data preservation contract"
+    ],
+    "design_proof": [
+      "Open WebUI Pipe exact source/version",
+      "independent LangGraph service protocol and checkpoint storage",
+      "Bifrost OSS OCI digest and selected local model / gateway API behavior"
+    ]
+  },
+  "product_runtime_mutations": 0,
+  "paid_API_requests": 0,
+  "requirement_baseline_promotions": 0
+}

@@ -1,0 +1,343 @@
+{
+  "title": "IF-02 six owner-approved engineering directions — source-linked G-R/G-A candidate trace",
+  "as_of": "2026-11-17",
+  "owner_direction": "LAI-OD-20261117-05",
+  "earlier_owner_direction": "LAI-OD-20261117-04",
+  "scope": "Provisional engineering directions approved; historical G-R/G-A controlled baseline NOT approved",
+  "source_indexes": [
+    {
+      "path": "verification/local_ai/20261116/RP02_136_ACCEPTANCE_AND_APPLICABILITY_REVIEW_CANDIDATE_20261116.csv",
+      "blob_sha": "35beef57bbfc86cdb8bf49e05e8a0942df0c821d",
+      "records": 136
+    },
+    {
+      "path": "verification/local_ai/20261116/RP03_19_INTERFACE_SCOPE_INDEX_CANDIDATE_20261116.csv",
+      "blob_sha": "18b41301ab14c97f1e17a9128717306a40a3a3a4",
+      "records": 19
+    },
+    {
+      "path": "verification/local_ai/20261116/RP04_26_ORACLE_SCOPE_INDEX_CANDIDATE_20261116.csv",
+      "blob_sha": "76bd1a2c7aea7a31066f862bb6e0c1bdb8dbd158",
+      "records": 26
+    },
+    {
+      "path": "verification/local_ai/20261116/OWNER_APPROVED_136_RELEASE_ASSIGNMENTS_20261116.csv",
+      "blob_sha": "bc4c55af3f16ac9c2d5e00e2d87ce83d8dca9f65",
+      "records": 136
+    }
+  ],
+  "preserved_source_counts": {
+    "requirements": 136,
+    "interfaces": 19,
+    "original_oracles": 26,
+    "owner_release_assignments": 136
+  },
+  "tracked_conditions": {
+    "source_ids_preserved": true,
+    "all_historical_source_hashes_immutable": true,
+    "release1_only": true,
+    "pr_draft_unmerged": true,
+    "G1": "OWNER_HOLD",
+    "G_R": "NOT_APPROVED",
+    "G_A": "NOT_APPROVED",
+    "original_oracles": "NOT_RUN",
+    "additional_original_oracle_ids_created": 0
+  },
+  "directions": [
+    {
+      "direction_key": "ED-01",
+      "subject": "Single selected Pipe and operator text controls",
+      "approval": "OWNER_APPROVED_ENGINEERING_DIRECTION_ONLY",
+      "original_requirement_anchors": [
+        {
+          "id": "LAI-R1-N004-01",
+          "source_sha256_audit": "c058b37efae0322c818923688438bf369e9c6d189af06b19aeafc26bd0c35926",
+          "source_evidence_level": "AUDIT_HASH_MATCHES_GITHUB_PUBLIC_REGISTER",
+          "baseline_status": "CANDIDATE_NOT_G_R_APPROVED"
+        },
+        {
+          "id": "LAI-R1-N004-02",
+          "source_sha256_audit": "7c353ef5a9146010e5a2407db075aea8950254f0cccaf9ec76686b7529dc8c14",
+          "source_evidence_level": "AUDIT_HASH_MATCHES_GITHUB_PUBLIC_REGISTER",
+          "baseline_status": "CANDIDATE_NOT_G_R_APPROVED"
+        },
+        {
+          "id": "LAI-R1-N007-01",
+          "source_sha256_audit": "9829c1c3fa8c5e616a9b7fe8bae96f139a85e26217cbe49ee3ad87772fdbc254",
+          "source_evidence_level": "AUDIT_HASH_MATCHES_GITHUB_PUBLIC_REGISTER",
+          "baseline_status": "CANDIDATE_NOT_G_R_APPROVED"
+        },
+        {
+          "id": "LAI-R1-N007-02",
+          "source_sha256_audit": "f425cae1b6cc8c89824e1a53479a1db2e4480729f478011b1fe699b319292652",
+          "source_evidence_level": "AUDIT_HASH_MATCHES_GITHUB_PUBLIC_REGISTER",
+          "baseline_status": "CANDIDATE_NOT_G_R_APPROVED"
+        }
+      ],
+      "original_interface_anchors": [
+        {
+          "id": "IF-02",
+          "GA_status": "NOT_APPROVED"
+        },
+        {
+          "id": "IF-UI",
+          "GA_status": "NOT_APPROVED"
+        }
+      ],
+      "original_oracle_anchors": [],
+      "supplemental_candidate_oracle": "GAP-R1-01/GAP-R1-02 (unapproved)",
+      "candidate_positive_predicate": "A server-authenticated user selects the delegated Pipe, submits a task, receives its durable stable ID, and later requests task-ID status or cancellation without a second UI/task store.",
+      "candidate_negative_predicate": "Mis-selected/direct mode, unknown ID or model-generated command cannot fabricate or mutate delegated task status.",
+      "missing_real_evidence": "Real pinned UI→Pipe turn with authenticated user and command dispatch; final IF02 field/error contract.",
+      "release1_actual_test_status": "NOT_RUN"
+    },
+    {
+      "direction_key": "ED-02",
+      "subject": "Native LangGraph END for self-termination",
+      "approval": "OWNER_APPROVED_ENGINEERING_DIRECTION_ONLY",
+      "original_requirement_anchors": [
+        {
+          "id": "LAI-R1-N004-03",
+          "source_sha256_audit": "d064b9d3fbd7158103e14aebf92f7b95ab689c07a3895381ed9aebc9a2562295",
+          "source_evidence_level": "AUDIT_HASH_MATCHES_GITHUB_PUBLIC_REGISTER",
+          "baseline_status": "CANDIDATE_NOT_G_R_APPROVED"
+        },
+        {
+          "id": "LAI-R1-N006-03",
+          "source_sha256_audit": "43d3be0669b783bcffa3eef89968fe2e6491210d0f4b8a6d3ebb52cded1b82ea",
+          "source_evidence_level": "AUDIT_HASH_MATCHES_GITHUB_PUBLIC_REGISTER",
+          "baseline_status": "CANDIDATE_NOT_G_R_APPROVED"
+        },
+        {
+          "id": "LAI-R1-N006-04",
+          "source_sha256_audit": "9345a082465434bbcd8af78d6f2613802d6d3d5993e97ecd1cb29d39c8abd7a4",
+          "source_evidence_level": "AUDIT_HASH_MATCHES_GITHUB_PUBLIC_REGISTER",
+          "baseline_status": "CANDIDATE_NOT_G_R_APPROVED"
+        },
+        {
+          "id": "LAI-R1-N008-02",
+          "source_sha256_audit": "90676360e5b969589046a4c12dde3daac4cf66ef03b6f2402fc496af70d12cdf",
+          "source_evidence_level": "AUDIT_HASH_MATCHES_GITHUB_PUBLIC_REGISTER",
+          "baseline_status": "CANDIDATE_NOT_G_R_APPROVED"
+        }
+      ],
+      "original_interface_anchors": [
+        {
+          "id": "IF-02",
+          "GA_status": "NOT_APPROVED"
+        },
+        {
+          "id": "IF-06",
+          "GA_status": "NOT_APPROVED"
+        }
+      ],
+      "original_oracle_anchors": [],
+      "supplemental_candidate_oracle": "IF02-SELF-END (supplemental candidate only)",
+      "candidate_positive_predicate": "An already-accepted task checks its stop condition at a node boundary, routes to LangGraph END and commits a truthful result and reason without an operator-cancel HTTP round trip.",
+      "candidate_negative_predicate": "An early END caused by invalid source data must not appear as successful two-specialist completion; native interrupt() must not be mistaken for terminal.",
+      "missing_real_evidence": "Pinned real graph two-branch execution, accepted outcome classification, durable checkpoint readback.",
+      "release1_actual_test_status": "NOT_RUN"
+    },
+    {
+      "direction_key": "ED-03",
+      "subject": "Sequential two-specialist minimum path",
+      "approval": "OWNER_APPROVED_ENGINEERING_DIRECTION_ONLY",
+      "original_requirement_anchors": [
+        {
+          "id": "LAI-R1-N005-01",
+          "source_sha256_audit": "72f6b0562a108dcc9219e41d931a89a01b2237087399f5c95fc29d3a1936191a",
+          "source_evidence_level": "AUDIT_HASH_MATCHES_GITHUB_PUBLIC_REGISTER",
+          "baseline_status": "CANDIDATE_NOT_G_R_APPROVED"
+        },
+        {
+          "id": "LAI-R1-N004-03",
+          "source_sha256_audit": "d064b9d3fbd7158103e14aebf92f7b95ab689c07a3895381ed9aebc9a2562295",
+          "source_evidence_level": "AUDIT_HASH_MATCHES_GITHUB_PUBLIC_REGISTER",
+          "baseline_status": "CANDIDATE_NOT_G_R_APPROVED"
+        },
+        {
+          "id": "LAI-R1-N006-03",
+          "source_sha256_audit": "43d3be0669b783bcffa3eef89968fe2e6491210d0f4b8a6d3ebb52cded1b82ea",
+          "source_evidence_level": "AUDIT_HASH_MATCHES_GITHUB_PUBLIC_REGISTER",
+          "baseline_status": "CANDIDATE_NOT_G_R_APPROVED"
+        }
+      ],
+      "original_interface_anchors": [
+        {
+          "id": "IF-02",
+          "GA_status": "NOT_APPROVED"
+        },
+        {
+          "id": "IF-03",
+          "GA_status": "NOT_APPROVED"
+        }
+      ],
+      "original_oracle_anchors": [],
+      "supplemental_candidate_oracle": "R1 integrated FAT two-specialist witness (supplemental candidate)",
+      "candidate_positive_predicate": "One operator-initiated happy-path task executes two separately identified configured local specialist roles in order, synthesizes only validated contributions and reports completion.",
+      "candidate_negative_predicate": "Early stopped or failed role-2 path cannot be passed as the successful two-specialist FAT.",
+      "missing_real_evidence": "Real role-by-role execution via pinned Bifrost and Ollama on isolated fixture after approvals.",
+      "release1_actual_test_status": "NOT_RUN"
+    },
+    {
+      "direction_key": "ED-04",
+      "subject": "Durable cancellation acceptance fences successor steps",
+      "approval": "OWNER_APPROVED_ENGINEERING_DIRECTION_ONLY",
+      "original_requirement_anchors": [
+        {
+          "id": "LAI-R1-N007-01",
+          "source_sha256_audit": "9829c1c3fa8c5e616a9b7fe8bae96f139a85e26217cbe49ee3ad87772fdbc254",
+          "source_evidence_level": "AUDIT_HASH_MATCHES_GITHUB_PUBLIC_REGISTER",
+          "baseline_status": "CANDIDATE_NOT_G_R_APPROVED"
+        },
+        {
+          "id": "LAI-R1-N008-01",
+          "source_sha256_audit": "dde4c3d85d5783c366504f9ed126fffa240fcc2475aedaacecb2ff4b05f22366",
+          "source_evidence_level": "AUDIT_HASH_MATCHES_GITHUB_PUBLIC_REGISTER",
+          "baseline_status": "CANDIDATE_NOT_G_R_APPROVED"
+        },
+        {
+          "id": "LAI-R1-N008-02",
+          "source_sha256_audit": "90676360e5b969589046a4c12dde3daac4cf66ef03b6f2402fc496af70d12cdf",
+          "source_evidence_level": "AUDIT_HASH_MATCHES_GITHUB_PUBLIC_REGISTER",
+          "baseline_status": "CANDIDATE_NOT_G_R_APPROVED"
+        },
+        {
+          "id": "LAI-R1-N008-05",
+          "source_sha256_audit": "25c192519af1aa21132e73550f4d1924b6f0f888cf2715100a2a7ec4d81b28f0",
+          "source_evidence_level": "AUDIT_HASH_MATCHES_GITHUB_PUBLIC_REGISTER",
+          "baseline_status": "CANDIDATE_NOT_G_R_APPROVED"
+        }
+      ],
+      "original_interface_anchors": [
+        {
+          "id": "IF-02",
+          "GA_status": "NOT_APPROVED"
+        },
+        {
+          "id": "IF-06",
+          "GA_status": "NOT_APPROVED"
+        }
+      ],
+      "original_oracle_anchors": [
+        {
+          "id": "GRGA07-F20",
+          "original_requirement_id": "LAI-R1-N008-01",
+          "execution_status": "NOT_RUN",
+          "acceptance_status": "NOT_APPROVED"
+        }
+      ],
+      "supplemental_candidate_oracle": "GAP-R1-02 (unapproved; GRGA07-F20 covers checkpoint only)",
+      "candidate_positive_predicate": "Supervisor durably accepts operator cancellation, reports cancel-requested separately from cancelled, and blocks initiation of subsequent specialist/tool steps; final disposition is truthful.",
+      "candidate_negative_predicate": "Already in-flight Ollama output cannot convert accepted cancellation into completed; terminal-first cancel cannot mutate original terminal state.",
+      "missing_real_evidence": "Isolated actual persistence/HTTP race and in-flight local model test; exact transition and ack contract.",
+      "release1_actual_test_status": "NOT_RUN"
+    },
+    {
+      "direction_key": "ED-05",
+      "subject": "Existing WebUI Stop reused without mandatory supervisor bridge",
+      "approval": "OWNER_APPROVED_ENGINEERING_DIRECTION_ONLY",
+      "original_requirement_anchors": [
+        {
+          "id": "LAI-R1-N004-02",
+          "source_sha256_audit": "7c353ef5a9146010e5a2407db075aea8950254f0cccaf9ec76686b7529dc8c14",
+          "source_evidence_level": "AUDIT_HASH_MATCHES_GITHUB_PUBLIC_REGISTER",
+          "baseline_status": "CANDIDATE_NOT_G_R_APPROVED"
+        },
+        {
+          "id": "LAI-R1-N017-03",
+          "source_sha256_audit": "56cc0c97221e689561cf436899a63979d94920dd1343771c77b241934a344d2e",
+          "source_evidence_level": "AUDIT_HASH_MATCHES_GITHUB_PUBLIC_REGISTER",
+          "baseline_status": "CANDIDATE_NOT_G_R_APPROVED"
+        }
+      ],
+      "original_interface_anchors": [
+        {
+          "id": "IF-01",
+          "GA_status": "NOT_APPROVED"
+        },
+        {
+          "id": "IF-02",
+          "GA_status": "NOT_APPROVED"
+        },
+        {
+          "id": "IF-UI",
+          "GA_status": "NOT_APPROVED"
+        }
+      ],
+      "original_oracle_anchors": [
+        {
+          "id": "GRGA07-F01",
+          "original_requirement_id": "LAI-R1-N003-01",
+          "execution_status": "NOT_RUN",
+          "acceptance_status": "NOT_APPROVED"
+        }
+      ],
+      "supplemental_candidate_oracle": "IF02-N05 (supplemental candidate only)",
+      "candidate_positive_predicate": "Direct chat uses existing WebUI Stop; independently active delegated tasks retain truthful supervisor state and can be cancelled by task-ID text command after UI response ends.",
+      "candidate_negative_predicate": "Pressing Stop alone is not reported as successful supervisor cancellation absent separately verified propagation.",
+      "missing_real_evidence": "Installed UI behavior, background task readback and no false cancel claim; optional future bridge does not gate R1.",
+      "release1_actual_test_status": "NOT_RUN"
+    },
+    {
+      "direction_key": "ED-06",
+      "subject": "Truthful mutually exclusive terminal task outcomes",
+      "approval": "OWNER_APPROVED_ENGINEERING_DIRECTION_ONLY",
+      "original_requirement_anchors": [
+        {
+          "id": "LAI-R1-N006-03",
+          "source_sha256_audit": "43d3be0669b783bcffa3eef89968fe2e6491210d0f4b8a6d3ebb52cded1b82ea",
+          "source_evidence_level": "AUDIT_HASH_MATCHES_GITHUB_PUBLIC_REGISTER",
+          "baseline_status": "CANDIDATE_NOT_G_R_APPROVED"
+        },
+        {
+          "id": "LAI-R1-N006-04",
+          "source_sha256_audit": "9345a082465434bbcd8af78d6f2613802d6d3d5993e97ecd1cb29d39c8abd7a4",
+          "source_evidence_level": "AUDIT_HASH_MATCHES_GITHUB_PUBLIC_REGISTER",
+          "baseline_status": "CANDIDATE_NOT_G_R_APPROVED"
+        },
+        {
+          "id": "LAI-R1-N008-02",
+          "source_sha256_audit": "90676360e5b969589046a4c12dde3daac4cf66ef03b6f2402fc496af70d12cdf",
+          "source_evidence_level": "AUDIT_HASH_MATCHES_GITHUB_PUBLIC_REGISTER",
+          "baseline_status": "CANDIDATE_NOT_G_R_APPROVED"
+        },
+        {
+          "id": "LAI-R1-N008-03",
+          "source_sha256_audit": "cd10a4fca8c2b0b6e25fd54efa2ef2359e31228f88b2fc05cb8a692cea7dc89c",
+          "source_evidence_level": "AUDIT_HASH_MATCHES_GITHUB_PUBLIC_REGISTER",
+          "baseline_status": "CANDIDATE_NOT_G_R_APPROVED"
+        },
+        {
+          "id": "LAI-R1-N008-04",
+          "source_sha256_audit": "05da1c8e6f63c2d5f706a2d40953f0c550b4647d1f5e1473fb4c625a6b355693",
+          "source_evidence_level": "AUDIT_HASH_MATCHES_GITHUB_PUBLIC_REGISTER",
+          "baseline_status": "CANDIDATE_NOT_G_R_APPROVED"
+        }
+      ],
+      "original_interface_anchors": [
+        {
+          "id": "IF-02",
+          "GA_status": "NOT_APPROVED"
+        },
+        {
+          "id": "IF-06",
+          "GA_status": "NOT_APPROVED"
+        }
+      ],
+      "original_oracle_anchors": [
+        {
+          "id": "GRGA07-F20",
+          "original_requirement_id": "LAI-R1-N008-01",
+          "execution_status": "NOT_RUN",
+          "acceptance_status": "NOT_APPROVED"
+        }
+      ],
+      "supplemental_candidate_oracle": "GAP-R1-01/02 (unapproved; GRGA07-F20 only checkpoint)",
+      "candidate_positive_predicate": "Task status distinguishes completed, cancelled, failed, incomplete as applicable; each terminal state has committed reason/version and survives restart.",
+      "candidate_negative_predicate": "Unavailable/missing checkpoint, invalid input, interrupted-for-resume or accepted cancel cannot silently be reported completed.",
+      "missing_real_evidence": "Owner-reviewed enum/partial-result scope; pinned HTTP and actual restart/restore tests.",
+      "release1_actual_test_status": "NOT_RUN"
+    }
+  ]
+}

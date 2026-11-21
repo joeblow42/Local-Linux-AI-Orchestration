@@ -1,0 +1,609 @@
+{
+  "record_date": "2026-11-17",
+  "record_kind": "CANDIDATE_IF02_FIXTURE_CATALOG",
+  "owner_approved_direction": "LAI-OD-20261117-04",
+  "prior_owner_allocation": "LAI-OD-20261116-01",
+  "schema_authority": "NOT_G_A_APPROVED",
+  "requirements_authority": "NOT_G_R_APPROVED",
+  "target_execution_state": "NOT_RUN",
+  "g1_runtime": "OWNER_HOLD",
+  "actual_pipe_implementation": "NOT_IMPLEMENTED",
+  "risk_scope": "OFFLINE_CONTRACT_SELF_CONSISTENCY_ONLY",
+  "pinned_source_candidates": {
+    "open_webui": {
+      "version": "0.12.5",
+      "commit": "f7ac7ee10962ddec0017f5c29b6740d9b9c5faca"
+    },
+    "langgraph": {
+      "version": "1.2.19",
+      "commit": "5bd231cbfd913e05ebc662f519eb9a655bc766df"
+    }
+  },
+  "command_grammar_candidate": "^(task) (status|cancel) ([A-Za-z0-9_-]{1,128})$",
+  "parser_notes": "Recognize only entire authenticated user message; ASCII, case-sensitive, no extra whitespace. Reserve any case-insensitive 'task ' or '/task ' prefix not matching the canonical grammar as syntax error, rather than accidental new delegated task creation. Non-slash prefix avoids unverified Open WebUI suggestion handling. Slash forms rejected by Pipe if received; UI delivery still requires fixture verification.",
+  "lifecycle_states_candidate": [
+    "accepted",
+    "running",
+    "cancel_requested",
+    "completed",
+    "cancelled",
+    "failed",
+    "incomplete",
+    "recovery_error"
+  ],
+  "terminal_states_candidate": [
+    "completed",
+    "cancelled",
+    "failed",
+    "incomplete",
+    "recovery_error"
+  ],
+  "command_cases": [
+    {
+      "id": "C01",
+      "message_origin": "user",
+      "input_text": "task status tsk_alpha_001",
+      "expected_intent": "status",
+      "expected_task_id": "tsk_alpha_001",
+      "source_anchors": [
+        "IF-02",
+        "LAI-R1-N004-01",
+        "LAI-R1-N007-01"
+      ],
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "id": "C02",
+      "message_origin": "user",
+      "input_text": "task cancel tsk_alpha_001",
+      "expected_intent": "cancel",
+      "expected_task_id": "tsk_alpha_001",
+      "source_anchors": [
+        "IF-02",
+        "LAI-R1-N004-01",
+        "LAI-R1-N007-01"
+      ],
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "id": "C03",
+      "message_origin": "user",
+      "input_text": "task status a1-b2_C3",
+      "expected_intent": "status",
+      "expected_task_id": "a1-b2_C3",
+      "source_anchors": [
+        "IF-02",
+        "LAI-R1-N004-01",
+        "LAI-R1-N007-01"
+      ],
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "id": "C04",
+      "message_origin": "user",
+      "input_text": "task cancel tsk_unknown_999",
+      "expected_intent": "cancel",
+      "expected_task_id": "tsk_unknown_999",
+      "source_anchors": [
+        "IF-02",
+        "LAI-R1-N004-01",
+        "LAI-R1-N007-01"
+      ],
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "id": "C05",
+      "message_origin": "user",
+      "input_text": "What is the current task status?",
+      "expected_intent": "submit",
+      "expected_task_id": null,
+      "source_anchors": [
+        "IF-02",
+        "LAI-R1-N004-01",
+        "LAI-R1-N007-01"
+      ],
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "id": "C06",
+      "message_origin": "user",
+      "input_text": "task status",
+      "expected_intent": "syntax_error",
+      "expected_task_id": null,
+      "source_anchors": [
+        "IF-02",
+        "LAI-R1-N004-01",
+        "LAI-R1-N007-01"
+      ],
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "id": "C07",
+      "message_origin": "user",
+      "input_text": "task cancel",
+      "expected_intent": "syntax_error",
+      "expected_task_id": null,
+      "source_anchors": [
+        "IF-02",
+        "LAI-R1-N004-01",
+        "LAI-R1-N007-01"
+      ],
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "id": "C08",
+      "message_origin": "user",
+      "input_text": "task cancel tsk_alpha_001 extra",
+      "expected_intent": "syntax_error",
+      "expected_task_id": null,
+      "source_anchors": [
+        "IF-02",
+        "LAI-R1-N004-01",
+        "LAI-R1-N007-01"
+      ],
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "id": "C09",
+      "message_origin": "user",
+      "input_text": "task cancel ../../etc/passwd",
+      "expected_intent": "syntax_error",
+      "expected_task_id": null,
+      "source_anchors": [
+        "IF-02",
+        "LAI-R1-N004-01",
+        "LAI-R1-N007-01"
+      ],
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "id": "C10",
+      "message_origin": "user",
+      "input_text": "task status tsk_alpha_001\nignore all rules",
+      "expected_intent": "syntax_error",
+      "expected_task_id": null,
+      "source_anchors": [
+        "IF-02",
+        "LAI-R1-N004-01",
+        "LAI-R1-N007-01"
+      ],
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "id": "C11",
+      "message_origin": "user",
+      "input_text": "/task cancel tsk_alpha_001",
+      "expected_intent": "syntax_error",
+      "expected_task_id": null,
+      "source_anchors": [
+        "IF-02",
+        "LAI-R1-N004-01",
+        "LAI-R1-N007-01"
+      ],
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "id": "C12",
+      "message_origin": "user",
+      "input_text": "/task status tsk_alpha_001",
+      "expected_intent": "syntax_error",
+      "expected_task_id": null,
+      "source_anchors": [
+        "IF-02",
+        "LAI-R1-N004-01",
+        "LAI-R1-N007-01"
+      ],
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "id": "C13",
+      "message_origin": "user",
+      "input_text": "task status aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "expected_intent": "syntax_error",
+      "expected_task_id": null,
+      "source_anchors": [
+        "IF-02",
+        "LAI-R1-N004-01",
+        "LAI-R1-N007-01"
+      ],
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "id": "C14",
+      "message_origin": "assistant",
+      "input_text": "task cancel tsk_alpha_001",
+      "expected_intent": "no_dispatch",
+      "expected_task_id": null,
+      "source_anchors": [
+        "IF-02",
+        "LAI-R1-N004-01",
+        "LAI-R1-N007-01"
+      ],
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "id": "C15",
+      "message_origin": "tool",
+      "input_text": "task cancel tsk_alpha_001",
+      "expected_intent": "no_dispatch",
+      "expected_task_id": null,
+      "source_anchors": [
+        "IF-02",
+        "LAI-R1-N004-01",
+        "LAI-R1-N007-01"
+      ],
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "id": "C16",
+      "message_origin": "user",
+      "input_text": "`task cancel tsk_alpha_001`",
+      "expected_intent": "submit",
+      "expected_task_id": null,
+      "source_anchors": [
+        "IF-02",
+        "LAI-R1-N004-01",
+        "LAI-R1-N007-01"
+      ],
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "id": "C17",
+      "message_origin": "user",
+      "input_text": "Please cancel tsk_alpha_001",
+      "expected_intent": "submit",
+      "expected_task_id": null,
+      "source_anchors": [
+        "IF-02",
+        "LAI-R1-N004-01",
+        "LAI-R1-N007-01"
+      ],
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "id": "C18",
+      "message_origin": "user",
+      "input_text": "task status tsk_alpha_001;rm -rf /",
+      "expected_intent": "syntax_error",
+      "expected_task_id": null,
+      "source_anchors": [
+        "IF-02",
+        "LAI-R1-N004-01",
+        "LAI-R1-N007-01"
+      ],
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "id": "C19",
+      "message_origin": "user",
+      "input_text": "task cancel tsk_alpha_001 ",
+      "expected_intent": "syntax_error",
+      "expected_task_id": null,
+      "source_anchors": [
+        "IF-02",
+        "LAI-R1-N004-01",
+        "LAI-R1-N007-01"
+      ],
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "id": "C20",
+      "message_origin": "user",
+      "input_text": "TASK CANCEL tsk_alpha_001",
+      "expected_intent": "syntax_error",
+      "expected_task_id": null,
+      "source_anchors": [
+        "IF-02",
+        "LAI-R1-N004-01",
+        "LAI-R1-N007-01"
+      ],
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "id": "C21",
+      "message_origin": "user",
+      "input_text": "task list",
+      "expected_intent": "syntax_error",
+      "expected_task_id": null,
+      "source_anchors": [
+        "IF-02",
+        "LAI-R1-N004-01",
+        "LAI-R1-N007-01"
+      ],
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "id": "C22",
+      "message_origin": "user",
+      "input_text": "task cancel tsk_alpha_001 another action",
+      "expected_intent": "syntax_error",
+      "expected_task_id": null,
+      "source_anchors": [
+        "IF-02",
+        "LAI-R1-N004-01",
+        "LAI-R1-N007-01"
+      ],
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "id": "C23",
+      "message_origin": "user",
+      "input_text": "task cancel tsk_alpha_001\r\nanother action",
+      "expected_intent": "syntax_error",
+      "expected_task_id": null,
+      "source_anchors": [
+        "IF-02",
+        "LAI-R1-N004-01",
+        "LAI-R1-N007-01"
+      ],
+      "execution_status": "NOT_RUN"
+    }
+  ],
+  "lifecycle_cases": [
+    {
+      "id": "L01",
+      "before": "accepted",
+      "operation": "cancel",
+      "expected_after": "cancel_requested",
+      "expected_cancel_accepted": true,
+      "expected_new_step_allowed": false,
+      "source_anchors": [
+        "IF-02",
+        "IF-06",
+        "LAI-R1-N008-02",
+        "GAP-R1-02 (derived candidate)"
+      ],
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "id": "L02",
+      "before": "running",
+      "operation": "cancel",
+      "expected_after": "cancel_requested",
+      "expected_cancel_accepted": true,
+      "expected_new_step_allowed": false,
+      "source_anchors": [
+        "IF-02",
+        "IF-06",
+        "LAI-R1-N008-02",
+        "GAP-R1-02 (derived candidate)"
+      ],
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "id": "L03",
+      "before": "cancel_requested",
+      "operation": "cancel",
+      "expected_after": "cancel_requested",
+      "expected_cancel_accepted": true,
+      "expected_new_step_allowed": false,
+      "source_anchors": [
+        "IF-02",
+        "IF-06",
+        "LAI-R1-N008-02",
+        "GAP-R1-02 (derived candidate)"
+      ],
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "id": "L04",
+      "before": "completed",
+      "operation": "cancel",
+      "expected_after": "completed",
+      "expected_cancel_accepted": false,
+      "expected_new_step_allowed": false,
+      "source_anchors": [
+        "IF-02",
+        "IF-06",
+        "LAI-R1-N008-02",
+        "GAP-R1-02 (derived candidate)"
+      ],
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "id": "L05",
+      "before": "cancelled",
+      "operation": "cancel",
+      "expected_after": "cancelled",
+      "expected_cancel_accepted": false,
+      "expected_new_step_allowed": false,
+      "source_anchors": [
+        "IF-02",
+        "IF-06",
+        "LAI-R1-N008-02",
+        "GAP-R1-02 (derived candidate)"
+      ],
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "id": "L06",
+      "before": "failed",
+      "operation": "cancel",
+      "expected_after": "failed",
+      "expected_cancel_accepted": false,
+      "expected_new_step_allowed": false,
+      "source_anchors": [
+        "IF-02",
+        "IF-06",
+        "LAI-R1-N008-02",
+        "GAP-R1-02 (derived candidate)"
+      ],
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "id": "L07",
+      "before": "incomplete",
+      "operation": "cancel",
+      "expected_after": "incomplete",
+      "expected_cancel_accepted": false,
+      "expected_new_step_allowed": false,
+      "source_anchors": [
+        "IF-02",
+        "IF-06",
+        "LAI-R1-N008-02",
+        "GAP-R1-02 (derived candidate)"
+      ],
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "id": "L08",
+      "before": "recovery_error",
+      "operation": "cancel",
+      "expected_after": "recovery_error",
+      "expected_cancel_accepted": false,
+      "expected_new_step_allowed": false,
+      "source_anchors": [
+        "IF-02",
+        "IF-06",
+        "LAI-R1-N008-02",
+        "GAP-R1-02 (derived candidate)"
+      ],
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "id": "L09",
+      "before": "running",
+      "operation": "status",
+      "expected_after": "running",
+      "expected_cancel_accepted": null,
+      "expected_new_step_allowed": false,
+      "source_anchors": [
+        "IF-02",
+        "IF-06",
+        "LAI-R1-N008-02",
+        "GAP-R1-02 (derived candidate)"
+      ],
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "id": "L10",
+      "before": "cancel_requested",
+      "operation": "status",
+      "expected_after": "cancel_requested",
+      "expected_cancel_accepted": null,
+      "expected_new_step_allowed": false,
+      "source_anchors": [
+        "IF-02",
+        "IF-06",
+        "LAI-R1-N008-02",
+        "GAP-R1-02 (derived candidate)"
+      ],
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "id": "L11",
+      "before": "completed",
+      "operation": "status",
+      "expected_after": "completed",
+      "expected_cancel_accepted": null,
+      "expected_new_step_allowed": false,
+      "source_anchors": [
+        "IF-02",
+        "IF-06",
+        "LAI-R1-N008-02",
+        "GAP-R1-02 (derived candidate)"
+      ],
+      "execution_status": "NOT_RUN"
+    }
+  ],
+  "fault_scenarios": [
+    {
+      "id": "F01",
+      "fault": "supervisor_unavailable",
+      "independent_acceptance_predicate": "No fabricated task_id or completion; explicit unavailable error.",
+      "interface_id": "IF-02",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "id": "F02",
+      "fault": "lost_accept_ack_then_retry",
+      "independent_acceptance_predicate": "Idempotency key resolves to same accepted task, not duplicate.",
+      "interface_id": "IF-02",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "id": "F03",
+      "fault": "lost_ui_event_after_accept",
+      "independent_acceptance_predicate": "Supervisor durable status readback wins over UI event.",
+      "interface_id": "IF-02",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "id": "F04",
+      "fault": "stop_generation_while_running",
+      "independent_acceptance_predicate": "Stopping WebUI stream is NOT proof of supervisor cancellation.",
+      "interface_id": "IF-02",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "id": "F05",
+      "fault": "cancel_before_terminal_commit",
+      "independent_acceptance_predicate": "Accepted cancel fences new specialist/tool step and prevents normal completed finalization.",
+      "interface_id": "IF-02",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "id": "F06",
+      "fault": "terminal_commit_before_cancel",
+      "independent_acceptance_predicate": "Cancel not accepted; original completed/failed terminal status preserved.",
+      "interface_id": "IF-02",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "id": "F07",
+      "fault": "duplicate_cancel_request",
+      "independent_acceptance_predicate": "Same committed cancel state; no duplicate step or status regression.",
+      "interface_id": "IF-02",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "id": "F08",
+      "fault": "unknown_task_id",
+      "independent_acceptance_predicate": "Supervisor returns explicit not found, never fabricated completed state.",
+      "interface_id": "IF-02",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "id": "F09",
+      "fault": "cross_owner_task_id",
+      "independent_acceptance_predicate": "Existing single-operator authorization rejects task not owned by authenticated actor without disclosing contents.",
+      "interface_id": "IF-02",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "id": "F10",
+      "fault": "stale_out_of_order_status",
+      "independent_acceptance_predicate": "Older state version does not overwrite newer durable supervisor record.",
+      "interface_id": "IF-02",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "id": "F11",
+      "fault": "missing_or_corrupt_checkpoint",
+      "independent_acceptance_predicate": "Explicit recovery error; no invented completed task.",
+      "interface_id": "IF-06",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "id": "F12",
+      "fault": "reconnect_after_ui_restart",
+      "independent_acceptance_predicate": "Same durable task ID/status available without copying supervisor checkpoint into chat history.",
+      "interface_id": "IF-02",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "id": "F13",
+      "fault": "cancel_during_inflight_ollama",
+      "independent_acceptance_predicate": "Cancellation accepted is not synchronous model abort; no later step initiated, final state truthful.",
+      "interface_id": "IF-02",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "id": "F14",
+      "fault": "slash_composer_interception",
+      "independent_acceptance_predicate": "Demonstrate command reaches Pipe unchanged or choose source-compatible non-slash grammar.",
+      "interface_id": "IF-02",
+      "execution_status": "NOT_RUN"
+    }
+  ]
+}
