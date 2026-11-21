@@ -1,0 +1,5 @@
+# RP-11 G1 backup and restore evidence
+
+- The owner selected the local account's home filesystem for the private, root-owned bundle. It is separate from the Local AI application mount and resides on the same laptop.
+- The operator created the three-component backup and restored it to a new private directory. The restore verified 14 manifest entries and successfully opened five SQLite snapshots using read-only integrity checks. Bifrost accounted for two snapshots, Open WebUI for two, and LangGraph for one. The WebUI chat table and the LangGraph task and checkpoint tables were readable.
+- The operator subsequently ran the isolated startup rehearsal using a disposable copy of the recovered data and the installed runtimes. Bifrost returned a healthy response, Open WebUI authenticated and read back the original saved conversation, and LangGraph authenticated and returned the corresponding completed task and result. The rehearsal reported `RP11_ISOLATED_STARTUP_AND_READBACK=PASS`. Live services kept their data and listeners. The isolated rehearsal did not repeat model inference.

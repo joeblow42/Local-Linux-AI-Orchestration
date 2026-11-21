@@ -1,0 +1,18 @@
+# RP-09 existing G1 supervisor checkpoint
+
+**Scope:** Release 1 implementation evidence on Bodhi 7. The task API and state vocabulary remain provisional.
+
+- The operator created one Open WebUI key. The protected local file was verified without displaying its contents. A loopback request to the permitted chat route returned HTTP 200. A request to the models route returned HTTP 403.
+- The independent LangGraph service now runs the RP-09 supervisor. A SQLite backup passed readback before the service change. The supervisor binds to loopback, authenticates its single trusted Pipe, and uses the existing local Bifrost virtual key. LangSmith tracing remains disabled.
+- The Pipe adapter submitted a real task to the installed supervisor. The task ran two sequential specialist nodes and a synthesis node through Bifrost and Ollama. Repeating the same submission returned the original task ID. A different actor could not read the task. A queued task was cancelled without a result. The completed task and result were available after a service restart.
+- A separate live run recorded a LangGraph checkpoint while the task was running. After a supervisor restart, it resumed and completed. A running task also accepted cancellation and reached terminal cancelled state with no result.
+- Automatic delivery now uses the endpoint-restricted Open WebUI key. The supervisor commits a pending delivery record with the terminal result, checks the original chat owner, message, parent and acknowledgement, and verifies a persisted readback. Bounded retries and the delivery outcome are stored with the task. Tasks completed before this change are excluded from delivery.
+- An installed-stack smoke test created one disposable saved chat through the Open WebUI API, invoked the Pipe adapter directly, and saved its acknowledgement. The live two-specialist task delivered its result to the same assistant message under the same parent. Independent chat readback matched the acknowledgement and result, and the test chat was archived.
+- The operator then submitted a task from the registered Open WebUI Pipe. The supervisor accepted it and recorded five LangGraph checkpoints. The content update returned HTTP 200 about two and a half minutes after acceptance, but the operator still saw the acknowledgement after refreshing. Installed database inspection found the final result in `content` and the original acknowledgement in the separate structured `output` field used by the frontend.
+- Delivery now merges just the target message through the existing chat API, verifies both text representations, and sends the existing structured completion event. After recoverable backups of both stores, the supervisor replayed delivery for the same task without rerunning inference. Chat API readback verified the final result in both fields, and the event endpoint accepted the structured update. The operator confirmed that the reply appeared in the original conversation without refreshing the browser.
+
+The installed Open WebUI message-content POST route uses an upsert. Reading the slot before calling it leaves a race in which deletion or editing can occur before the write. The event route also delegates persistence to an upsert for content replacement. The installed chat model exposes a transaction-scoped existing-message edit helper. A narrow conditional message update using that transaction is a candidate way to preserve the acknowledgement and prevent recreating or overwriting the wrong message.
+
+The owner judged the race noncritical for the single-user deployment and deferred the atomic update as [FUT-002](./POTENTIAL_UPGRADES.csv). The existing route retains the documented race.
+
+No G-R or G-A baseline approval or FAT execution follows from this checkpoint.

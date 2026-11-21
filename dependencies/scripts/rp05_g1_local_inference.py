@@ -13,7 +13,7 @@ GATEWAY = 'http://127.0.0.1:8080'
 def call(url, payload=None, secret=None):
     headers = {'Content-Type': 'application/json'}
     if secret:
-        headers['Authorization'] = 'Bearer ' + secret
+        headers['x-bf-vk'] = secret
     req = urllib.request.Request(
         url, headers=headers,
         data=(json.dumps(payload).encode() if payload is not None else None))

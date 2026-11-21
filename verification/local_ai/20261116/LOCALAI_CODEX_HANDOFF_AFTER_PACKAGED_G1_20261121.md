@@ -1,0 +1,59 @@
+# Local AI handoff after the packaged G1 installation
+
+The owner paused this project to work on another project. The last completed live work was an in-place Debian installation, offline staging, service activation, owner browser checks and follow-up authorization and recovery checks on G1. The owner selected a **separate computer with a fresh Bodhi Linux 7 AMD64 installation** for the clean-target FAT and will prepare it. Keep the existing G1 installation available while that computer is prepared. [RP-14 evidence and open gates](RP14_G1_REHEARSAL_AND_FAT_GATE_20261121.md)
+
+## Resume instructions
+
+Use this handoff as the continuation point and the [RP-13 handoff](LOCALAI_CODEX_HANDOFF_AFTER_G1_RP13_20261120.md) for the operating instructions and earlier history. Its standalone trailing `wait` rule still applies. Start routine work only after the owner directs continuation. Handle low-impact engineering directly. Bring the owner moderate-risk or higher decisions that actually require their judgment. System authentication and tool permissions remain separate from project authorization. The owner authorized narrowly scoped use of their local sudo credential when needed. Obtain any credential location through trusted local context or from the owner and keep it out of repository content, command output and transfer media.
+
+The recovery branch is `handoff/localai-20261116-recovery`. Confirm the current checkout, branch, HEAD, and working-tree status before editing, including the primary checkout if the session uses a detached worktree. Preserve newer work. Use PR #1 as a draft and keep it unmerged. The published evidence carries the original 42 increment, 136 requirement (104/17/15), 19 interface and 26 oracle identities. Older documents contain historical holds and candidate wording. Apply the later G1 decision for in-place development and this handoff for the owner's separate clean-test-target selection. [Draft PR #1](https://github.com/joeblow42/Local-Linux-AI-Orchestration/pull/1) · [Owner-approved roadmap dispositions](OWNER_APPROVAL_R1_42_INCREMENT_DISPOSITIONS_AND_EARLY_INSTALL_SEQUENCE_20261119.md) · [G1 decision](OWNER_APPROVAL_BODHI7_AND_G1_IN_PLACE_RP05_20261119.md)
+
+The most recent cadence review was after RP-13.INC-03. It rated current alignment 8.5/10 and retained the 8.5/10 historical baseline. Apply the existing three-to-five completed-increment rule from that checkpoint and count only completed engineering increments. RP-14 evidence mapping and same-host rehearsal are documented. Clean-target execution, controlled baselines and formal acceptance remain open. [Alignment review](RP13_ALIGNMENT_REVIEW_20261121.md)
+
+## What is installed on G1
+
+The owner installed `localai-home_0.1.0~g1.5_all.deb` into the live package database. `dpkg -V localai-home` returned no discrepancy. The installed `localai-stage-offline` command verified the paired dependency tar and rebuilt both Python environments offline. The existing Open WebUI and LangGraph user services were switched to those runtimes. LangGraph runs the packaged `/usr/share/localai/supervisor.py`. Open WebUI keeps its existing registered Pipe and service data. Existing Bifrost, Ollama and the model were reused.
+
+| Component | Loopback port | Live arrangement |
+| --- | --- | --- |
+| Open WebUI | 3000 | User unit `localai-open-webui.service` |
+| LangGraph supervisor | 8010 | User unit `localai-langgraph.service` |
+| Bifrost | 8080 | Existing pinned `bifrost-g1` container |
+| Ollama | 11434 | Existing local runtime and verified Qwen model |
+
+The switch added a `90-localai-fat-package.conf` drop-in to each user service. The earlier unit files and environments were retained. Before any future change, inspect the effective units and active work and verify a recoverable checkpoint. For a deliberate rollback, scope the change to those two overrides, reload the user service manager and restart the two units, then verify readiness and data readback. The live switch succeeded and this live rollback was not exercised. The compatible Debian package downgrade was exercised separately in a disposable database. [Service notes](../../../localai/README.md) · [Package and rollback records](RP13_G1_PRIVATE_PACKAGE_TRANSPORT_AND_ROLLBACK_20261121.md)
+
+## Evidence already collected
+
+- **Offline staging and package.** The private tar passed SHA-256 readback across 304 payloads. Both Python environments installed from pinned local wheels using hash checks. The packaged staging command rejected an incorrect archive. The versioned package builder, staging command and isolated restore options are in Git. The `g1.5` candidate itself was built and used on G1.
+- **Startup and operator journeys.** Both switched user services returned HTTP 200 on readiness. Local Bifrost inference succeeded. The owner completed fresh direct and delegated browser checks. Independently verified the latest task was completed and delivered and the result matched the saved reply. Earlier RP-09 evidence supplies stable ID, duplicate submission, owner isolation, cancellation and mid-workflow recovery.
+- **Recovery.** The verified preactivation checkpoint had 14 entries. The verifier rejected a disposable incomplete manifest. The packaged application and offline-staged runtimes passed isolated authenticated restored chat and task readback with the pinned Bifrost image on G1. That rehearsal did not start Ollama inside the isolated namespace.
+- **Policy checks.** Missing and invalid Bifrost credentials and unauthenticated task lookup returned 401. An absent model returned 403 with the valid key. Runtime telemetry settings and mount guards were read back. Independent upstream dispatch counters, comprehensive application egress, backend-outage behavior and startup with the mount absent remain open. Point samples and prior representative workload metrics are available. Supported performance thresholds remain open.
+- **Traceability.** The candidate RP-14 trace maps all 104 R1 requirements to witness or gap status. No formal original oracle status was promoted. Exact G-R/G-A baselines and independent evidence review remain pending.
+
+[RP-09 supervisor evidence](RP09_G1_SUPERVISOR_CHECKPOINT_20261120.md) · [RP-12 workload evidence](RP12_G1_INTEGRATED_WORKLOAD_EVIDENCE_20261120.md) · [RP-14 evidence trace](RP14_R1_ENGINEERING_EVIDENCE_TRACE_CANDIDATE_20261121.csv) · [Installed checks and clean-target plan](RP14_G1_REHEARSAL_AND_FAT_GATE_20261121.md)
+
+## Recover local artifacts by filename and checksum
+
+| Artifact | SHA-256 or identity | Recovery |
+| --- | --- | --- |
+| `localai-home_0.1.0~g1.5_all.deb` | `6e47c4bd10dfdfa497abde104c8e1ff3debdc0f510f6b9e1e91389fa97f72c0a` | Locate the exact G1 candidate by name and hash. Rebuild from the versioned builder and reverify if the original is unavailable. Packaging timestamps can produce a different binary hash. |
+| `localai-g1-private-dependencies.tar` | `db384cde5a107740d3f8dc0cdfb7e87f1e6e0f84cd3480b20e09d87b37c9d413` | Locate on G1 application storage. The embedded `SHA256SUMS`, code, versioned locks and inventories document its contents. The staging code pins this archive hash. A repacked tar requires checking the payloads and building a new matched package. |
+| Bifrost OCI image and export | Exact OCI identity and export SHA-256 in the manifest | Reuse the verified private export. Exact application source revision remains unknown and the owner directed against repeat searches. |
+| Python, Ollama and model | Version, download identity, executable/archive matches and model descriptor hashes in the provenance records | Reuse verified transport payloads. Python is CPython 3.12.14 from build 20260929. The model is `qwen3:4b-instruct-2507-q4_K_M`. |
+| G1 checkpoint | Verified with the packaged backup utility | The bundle includes private configuration, credentials and application data. Obtain it locally from the owner or verified G1 backup records. Transfer only via an owner-approved access-controlled route for the recovery witness. |
+
+Large FAT artifacts are on the mounted G1 application filesystem. Locate the first two by exact filename under `/mnt/local-ai-storage/development`, then verify their hashes. Use the application mount for large staging. Earlier temporary archive and environment copies pushed root usage to 93% before relocation. A moved virtual environment can contain stale absolute paths. Rebuild one from the wheel inputs instead of moving a live runtime. Avoid duplicate multi-gigabyte artifacts unless there is a specific verification need. G1 application storage had about 8.5 GiB available after the live staging. Recheck free space before any copy or install.
+
+GitHub preserves the project-owned source, checksums, historical receipts, dependency manifests and evidence. The private archive and checkpoint stay offline. Public redistribution remains open because image provenance and corresponding-source requirements, native notices and full transport licensing need further review. Never publish credentials, private configuration, customer or operator data, or the local sudo file. [Versioned inventory](../../../dependencies/manifests/r1-g1-20261120/artifact-inventory.json) · [RP-13 provenance](RP13_G1_PROVENANCE_FOLLOWUP_20261120.md)
+
+## Next work on the fresh computer
+
+1. **Preflight when the owner has prepared the machine.** Inspect Bodhi 7 / Jammy AMD64, user and system service managers, application mount and free space, and base packages. Record the fresh target identity without credentials or private machine configuration. Leave G1 unchanged.
+2. **Close offline host dependencies.** Current project package stages Python and wheels. The G1 rehearsal relied on an already installed Docker base, Bifrost container, Ollama service and model store. Derive and hash the exact missing offline package closure from the fresh host inventory, including Docker, containerd and runc and their applicable dependencies. Validate installation without network fetches on the target. Keep Docker administration root-restricted.
+3. **Prepare fresh provisioning.** Provide reviewed startup instructions or tooling to load the pinned Bifrost image and initialize a loopback-only local route, install the verified Ollama runtime/model, stage and launch the WebUI and independent supervisor, register the packaged Pipe and create only protected local credentials. Establish separate writable persistent stores and mount guards. Preserve matching runtime, archive and package pairs. Scope any credential creation to the clean target and authorized operator.
+4. **Witness a new installation.** The owner wants to run the first `.deb` installation command. Follow with the verified offline prerequisites, health checks, direct chat, delegated task acknowledgement and automatic same-chat completion, durable state and cancellation/restart checks. Preserve and reuse the G1 evidence where the test criteria allow it.
+5. **Witness a separate restore.** Verify the private G1 checkpoint after transfer and before restore. Check recovered WebUI history, LangGraph task/checkpoint and authenticated Bifrost-to-Ollama routing on the clean target. Use distinct disposable or checkpointed state for the recovery witness.
+6. **Review and close the gates.** Confirm exact G-R/G-A and oracle authority, conduct remaining applicable failure, outage and egress observations without hosted calls, obtain independent installed verification and record owner acceptance. Keep original oracle execution states accurate.
+
+Use only the established sequence. The new machine is the owner's immediate dependency. Fresh provisioning design and public-source inventories can advance without that machine. Final platform closure and clean-target evidence require it. [Candidate FAT oracles](RP04_R1_OPERATIONAL_FIRST_ARTICLE_ORACLES_CANDIDATE_20261116.md)
