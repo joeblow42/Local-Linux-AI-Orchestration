@@ -50,5 +50,5 @@ Verified all seven blocker clauses against the final ODT content, re-walked the 
 
 | Review draft | SHA-256 |
 | --- | --- |
-| [Governance Standard v2.1 draft](../governance/AI_Assisted_Software_Engineering_Governance_Standard_v2_1_DRAFT.odt) | `fdc84873f2f0483a07699abf8a868e3b08ce1a3bea3da3425aa3bb9c4c952168` |
-| [Roadmap Guide v2.1 draft](../governance/Software_Development_Roadmap_Planning_and_Execution_Guide_v2_1_DRAFT.odt) | `f6c41e13e84b54dfab18f9a7307ed49e71067074360bb530bdbb8552bb77eacd` |
+| [Governance Standard v2.1 draft](https://github.com/joeblow42/Local-Linux-AI-Orchestration/blob/05aea0f6aa6d4cf1004b532996963a49622e45ef/docs/governance/AI_Assisted_Software_Engineering_Governance_Standard_v2_1_DRAFT.odt) | `fdc84873f2f0483a07699abf8a868e3b08ce1a3bea3da3425aa3bb9c4c952168` |
+| [Roadmap Guide v2.1 draft](https://github.com/joeblow42/Local-Linux-AI-Orchestration/blob/05aea0f6aa6d4cf1004b532996963a49622e45ef/docs/governance/Software_Development_Roadmap_Planning_and_Execution_Guide_v2_1_DRAFT.odt) | `f6c41e13e84b54dfab18f9a7307ed49e71067074360bb530bdbb8552bb77eacd` |

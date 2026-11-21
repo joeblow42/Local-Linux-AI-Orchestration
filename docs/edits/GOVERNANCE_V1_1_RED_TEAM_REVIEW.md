@@ -4,7 +4,7 @@
 
 The most important red-team finding is **status language**. An agent following the Guide’s summary states could report an executed test as verified, a completed FAT as accepted, or an authorized release as deployed. The detailed sections generally distinguish those outcomes. The short definitions and templates need to make that distinction consistently, because they are the parts most likely to be copied into a roadmap or agent prompt.
 
-I reviewed the two local v1.1 drafts. The Guide still names **Governance Standard v1.0** as its governing reference. I treated Standard v1.1 as a candidate for compatibility review, with no change to which version governs the project. [Standard v1.1 draft](../governance/AI_Assisted_Software_Engineering_Governance_Standard_v1_1_DRAFT.odt) · Guide v1.1 draft reviewed from the local working copy at `docs/governance/Software_Development_Roadmap_Planning_and_Execution_Guide_v1_1_DRAFT.odt`.
+I reviewed the two local v1.1 drafts. The Guide still names **Governance Standard v1.0** as its governing reference. I treated Standard v1.1 as a candidate for compatibility review, with no change to which version governs the project. [Standard v1.1 draft](https://github.com/joeblow42/Local-Linux-AI-Orchestration/blob/05aea0f6aa6d4cf1004b532996963a49622e45ef/docs/governance/AI_Assisted_Software_Engineering_Governance_Standard_v1_1_DRAFT.odt) · Guide v1.1 draft reviewed from the local working copy at `docs/governance/Software_Development_Roadmap_Planning_and_Execution_Guide_v1_1_DRAFT.odt`.
 
 ## Red-team findings
 

@@ -68,7 +68,7 @@ All eight findings are accounted for. The scenarios were checked against both dr
 
 | Review draft | SHA-256 |
 | --- | --- |
-| [AI_Assisted_Software_Engineering_Governance_Standard_v2_0_DRAFT.odt](../governance/AI_Assisted_Software_Engineering_Governance_Standard_v2_0_DRAFT.odt) | `469f1391a91461284f10ce51e1fef4610262c3b19e52ccbbf1016afca1f38c05` |
-| [Software_Development_Roadmap_Planning_and_Execution_Guide_v2_0_DRAFT.odt](../governance/Software_Development_Roadmap_Planning_and_Execution_Guide_v2_0_DRAFT.odt) | `8d21474886947fc9eccecaeef258922b7db2a5bb90a5f93a76c028073c8c80e5` |
+| [AI_Assisted_Software_Engineering_Governance_Standard_v2_0_DRAFT.odt](https://github.com/joeblow42/Local-Linux-AI-Orchestration/blob/05aea0f6aa6d4cf1004b532996963a49622e45ef/docs/governance/AI_Assisted_Software_Engineering_Governance_Standard_v2_0_DRAFT.odt) | `469f1391a91461284f10ce51e1fef4610262c3b19e52ccbbf1016afca1f38c05` |
+| [Software_Development_Roadmap_Planning_and_Execution_Guide_v2_0_DRAFT.odt](https://github.com/joeblow42/Local-Linux-AI-Orchestration/blob/05aea0f6aa6d4cf1004b532996963a49622e45ef/docs/governance/Software_Development_Roadmap_Planning_and_Execution_Guide_v2_0_DRAFT.odt) | `8d21474886947fc9eccecaeef258922b7db2a5bb90a5f93a76c028073c8c80e5` |
 
 Owner approval is pending for the exact drafts above, including their proposed pairing and disposition of any deferred structural transfers. The existing governing baseline and Local AI FAT scope remain in force.
