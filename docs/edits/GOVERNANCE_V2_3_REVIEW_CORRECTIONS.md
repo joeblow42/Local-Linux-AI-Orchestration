@@ -15,5 +15,5 @@ Both files opened, saved and reopened in LibreOffice and rendered with v2.3 draf
 
 | Review draft | SHA-256 |
 | --- | --- |
-| [Governance Standard v2.3 draft](../governance/AI_Assisted_Software_Engineering_Governance_Standard_v2_3_DRAFT.odt) | `68ca72a5a28e17c01532fad5c04a13e4aa3cd8d00380f793e1303cfea1fa17cb` |
-| [Roadmap Guide v2.3 draft](../governance/Software_Development_Roadmap_Planning_and_Execution_Guide_v2_3_DRAFT.odt) | `00108730bc601da3b67a81f831562a597d07ea8597adc1c5aa7fb4d559dff751` |
+| [Governance Standard v2.3 draft](https://github.com/joeblow42/Local-Linux-AI-Orchestration/blob/4d3307bbfb5566f1c14f6fef40f487597459ccf8/docs/governance/AI_Assisted_Software_Engineering_Governance_Standard_v2_3_DRAFT.odt) | `68ca72a5a28e17c01532fad5c04a13e4aa3cd8d00380f793e1303cfea1fa17cb` |
+| [Roadmap Guide v2.3 draft](https://github.com/joeblow42/Local-Linux-AI-Orchestration/blob/4d3307bbfb5566f1c14f6fef40f487597459ccf8/docs/governance/Software_Development_Roadmap_Planning_and_Execution_Guide_v2_3_DRAFT.odt) | `00108730bc601da3b67a81f831562a597d07ea8597adc1c5aa7fb4d559dff751` |

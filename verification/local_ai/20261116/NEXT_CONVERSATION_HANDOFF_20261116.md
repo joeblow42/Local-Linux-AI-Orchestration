@@ -1,4 +1,6 @@
 # Local AI Development — next-conversation engineering handoff
+
+**Historical record.** For current instructions and the adopted governance pair, start with the [active handoff](LOCALAI_CODEX_HANDOFF_AFTER_G1_RP13_20261120.md). The version references below describe the original checkpoint.
 **Date:** 2026-11-16  
 **Status:** GitHub-based recovery checkpoint / candidate engineering work; **NOT** a product baseline  
 **Governing method:** AI-Assisted Software Engineering Governance Standard v1.0  

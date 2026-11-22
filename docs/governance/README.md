@@ -1,12 +1,12 @@
 # Current engineering governance
 
-The owner reviewed and approved the v2.1 pair and adopted it for Local AI Development. Use these versions for new work. Other projects can adopt the pair by recording the versions and a commit-pinned source reference.
+The owner approved and adopted the v2.3 pair for Local AI Development. Use these versions for new work. Other projects can adopt the pair by recording these versions and commit-pinned source references.
 
-| Current document | Role |
-| --- | --- |
-| [AI-Assisted Software Engineering Governance Standard v2.1](AI_Assisted_Software_Engineering_Governance_Standard_v2_1.odt) | Governing engineering controls, authority, evidence and acceptance. |
-| [Software Development Roadmap Planning and Execution Guide v2.1](Software_Development_Roadmap_Planning_and_Execution_Guide_v2_1.odt) | Non-normative companion for planning and execution. Approved project decisions still control scope and FAT criteria. |
+| Current document | Role | SHA-256 |
+| --- | --- | --- |
+| [AI-Assisted Software Engineering Governance Standard v2.3](AI_Assisted_Software_Engineering_Governance_Standard_v2_3.odt) | Governing controls, authority, evidence and acceptance. | `793003e22c1d0d8792905239d7b24923b466977b602f2a9df9f1c00f78e72d41` |
+| [Software Development Roadmap Planning and Execution Guide v2.3](Software_Development_Roadmap_Planning_and_Execution_Guide_v2_3.odt) | Non-normative companion for planning and execution. Approved project decisions still control scope and FAT criteria. | `e89ca2f4d02f26419472b8cb0410e52517e9f79795ae427e74d810821d9aa015` |
 
-The [review record](../edits/GOVERNANCE_V2_1_SECOND_RED_TEAM_REVIEW.md) identifies the reviewed draft bytes and records verification. The approved files preserve the reviewed engineering clauses with updated status labels and version references.
+The [structural move review](../edits/GOVERNANCE_V2_2_STRUCTURAL_MOVE_REVIEW.md) maps the material moved from the Standard to the Guide. The [correction record](../edits/GOVERNANCE_V2_3_REVIEW_CORRECTIONS.md) traces the independent-review findings and bookmark verification. The approved files preserve the reviewed engineering clauses with updated status labels and companion references.
 
-Earlier copies remain in [Git history](https://github.com/joeblow42/Local-Linux-AI-Orchestration/tree/05aea0f6aa6d4cf1004b532996963a49622e45ef/docs/governance) for historical evidence. Start current work with the pair above. Adoption leaves the Local AI requirements and interface baselines, clean-host FAT, and product acceptance at their recorded states.
+The approved v2.1 files and both review draft pairs remain in [version history](https://github.com/joeblow42/Local-Linux-AI-Orchestration/tree/4d3307bbfb5566f1c14f6fef40f487597459ccf8/docs/governance). Previous review records retain their original authority and evidence. Only the approved v2.3 pair is current. Adoption leaves the Local AI requirements and interface baselines, clean-host FAT, and product acceptance at their recorded states.

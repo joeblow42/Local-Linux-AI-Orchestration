@@ -26,8 +26,8 @@ The owner directed the structural moves from the approved v2.1 documents on `mai
 
 | Draft | SHA-256 |
 | --- | --- |
-| [Governance Standard v2.2 draft](../governance/AI_Assisted_Software_Engineering_Governance_Standard_v2_2_DRAFT.odt) | `667b97a6d801046dfd77a2b4d6e56dfdddb04e4687285bdf3864d7316f2c5a3c` |
-| [Roadmap Guide v2.2 draft](../governance/Software_Development_Roadmap_Planning_and_Execution_Guide_v2_2_DRAFT.odt) | `a4649d392dbc7b7282640c1180a2d494e7dc3876bf603f93d751a52d747aa121` |
+| [Governance Standard v2.2 draft](https://github.com/joeblow42/Local-Linux-AI-Orchestration/blob/4d3307bbfb5566f1c14f6fef40f487597459ccf8/docs/governance/AI_Assisted_Software_Engineering_Governance_Standard_v2_2_DRAFT.odt) | `667b97a6d801046dfd77a2b4d6e56dfdddb04e4687285bdf3864d7316f2c5a3c` |
+| [Roadmap Guide v2.2 draft](https://github.com/joeblow42/Local-Linux-AI-Orchestration/blob/4d3307bbfb5566f1c14f6fef40f487597459ccf8/docs/governance/Software_Development_Roadmap_Planning_and_Execution_Guide_v2_2_DRAFT.odt) | `a4649d392dbc7b7282640c1180a2d494e7dc3876bf603f93d751a52d747aa121` |
 
 ## Independent-review correction
 
